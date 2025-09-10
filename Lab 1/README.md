@@ -285,6 +285,7 @@ Click the image to watch the video.
 
 Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
 
+
 \*\***Show the follow-up work here.**\*\*
 * **CatCommunicationButton:** The new goal is to attract the cat to use it. We added ideas such as flashing lights and a speaker that plays sounds to draw the cat’s attention.
 * **EmotionCard:** The new goal is to make it more portable. One idea is to design it so the card can be folded, making it easier to carry around.
