@@ -14,7 +14,7 @@ Be generous in acknowledging their contributions! And also recognizing any other
 
 Lab Prep is extra long this week. Make sure to start this early for lab on Thursday.
 
-1. ### Set up your Lab 2 Github
+1. ### ✅ Set up your Lab 2 Github
 
 Before the start of lab Thursday, ensure you have the latest lab content by updating your forked repository. 
 
@@ -23,7 +23,7 @@ Before the start of lab Thursday, ensure you have the latest lab content by upda
 This guide covers how to pull updates without overwriting your completed work, handle merge conflicts, and recover if something goes wrong.
 
 
-2. ### Get Kit and Inventory Parts
+2. ### ✅ Get Kit and Inventory Parts
 Prior to the lab session on Thursday, taken inventory of the kit parts that you have, and note anything that is missing:
 
 ***Update your [parts list inventory](partslist.md)***
