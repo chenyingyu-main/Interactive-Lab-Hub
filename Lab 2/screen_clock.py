@@ -65,6 +65,7 @@ while True:
     draw.rectangle((0, 0, width, height), outline=0, fill=400)
 
     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
+    # test pushing
 
     # Display image.
     disp.image(image, rotation)
