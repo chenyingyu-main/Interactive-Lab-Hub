@@ -164,7 +164,7 @@ You can look in `screen_boot_script.py` for how to display text on the screen!
 
 You can look in `image.py` for an example of how to display an image on the screen. Can you make it switch to another image when you push one of the buttons?
 
-**Modified code is here: image_switch.py**
+>**Modified code is here: image_switch.py**
 
 **Photos for Demo**
 ![test](images/image_switch.JPG)
@@ -172,6 +172,12 @@ You can look in `image.py` for an example of how to display an image on the scre
 ## Part D. 
 ### Set up the Display Clock Demo
 Work on `screen_clock.py`, try to show the time by filling in the while loop (at the bottom of the script where we noted "TODO" for you). You can use the code in `cli_clock.py` and `stats.py` to figure this out.
+
+>**Modified code is here: screen_clock.py**
+
+**Photos for Demo**
+![test](images/clock.JPG)
+
 
 ### How to Edit Scripts on Pi
 Option 1. One of the ways for you to edit scripts on Pi through terminal is using [`nano`](https://linuxize.com/post/how-to-use-nano-text-editor/) command. You can go into the `screen_clock.py` by typing the follow command line:
