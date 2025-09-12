@@ -28,7 +28,7 @@ Prior to the lab session on Thursday, taken inventory of the kit parts that you 
 
 ***Update your [parts list inventory](partslist.md)***
 
-3. ### Prepare your Pi for lab this week
+3. ### ✅ Prepare your Pi for lab this week
 [Follow these instructions](prep.md) to download and burn the image for your Raspberry Pi before lab Thursday.
 
 
@@ -58,7 +58,7 @@ Labs are due on Mondays. Make sure this page is linked to on your main class hub
 
 ## Part A. 
 ### Connect to your Pi
-Just like you did in the lab prep, ssh on to your pi. Once you get there, create a Python environment (named venv) by typing the following commands.
+✅ Just like you did in the lab prep, ssh on to your pi. Once you get there, create a Python environment (named venv) by typing the following commands.
 
 ```
 ssh pi@<your Pi's IP address>
@@ -79,6 +79,8 @@ The support for password authentication of GitHub was removed on August 13, 2021
 
 Following the steps listed [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) from GitHub to set up a token. Depends on your preference, you can set up and select the scopes, or permissions, you would like to grant the token. This token will act as your GitHub password later when you use the terminal on your Pi to sync files with your lab-hub repo.
 
+**✅ Environment Setup (Prototype Screenshot)**
+![Environment Setup](images/Environment_setup.png)
 
 ## Part B. 
 ### Try out the Command Line Clock
@@ -111,6 +113,8 @@ Install the packages from the requirements.txt and run the example script `cli_c
 The terminal should show the time, you can press `ctrl-c` to exit the script.
 If you are unfamiliar with the Python code in `cli_clock.py`, have a look at [this Python refresher](https://hackernoon.com/intermediate-python-refresher-tutorial-project-ideas-and-tips-i28s320p). If you are still concerned, please reach out to the teaching staff!
 
+**✅ Command Line Clock (Prototype Screenshot)**
+![Command Line Clock](images/command_line_clock.png)
 
 ## Part C. 
 ### Set up your RGB Display
@@ -150,15 +154,15 @@ You can type the name of a color then press either of the buttons on the MiniPiT
 ```
 (venv) pi@raspberrypi:~/Interactive-Lab-Hub/Lab 2 $ cat screen_test.py
 ```
+**✅ Screen Test**
+![test](images/screen_test.JPG)
 
-#### Displaying Info with Texts
+#### ✅ Displaying Info with Texts
 You can look in `screen_boot_script.py` for how to display text on the screen!
 
-#### Displaying an image
+#### ✅ Displaying an image
 
 You can look in `image.py` for an example of how to display an image on the screen. Can you make it switch to another image when you push one of the buttons?
-
-
 
 ## Part D. 
 ### Set up the Display Clock Demo
