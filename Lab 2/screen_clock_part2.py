@@ -202,7 +202,7 @@ image_configs = {
         {"image_path": "clock_imgs/morning.png", "message": "Good\nMorning", "font_color": "#793d3d"},
         {"image_path": "clock_imgs/morning_americano.png", "message": "Americano", "font_color": "#793d3d"},
         {"image_path": "clock_imgs/morning_latte.png", "message": "  Latte", "font_color": "#793d3d"},
-        {"image_path": "clock_imgs/morning_romano.png", "message": "Romano", "font_color": "#793d3d"}
+        {"image_path": "clock_imgs/morning_romano.png", "message": "Espresso\nRomano", "font_color": "#793d3d"}
     ],
     "noon": [
         {"image_path": "clock_imgs/noon.png", "message": "Good\nAfternoon", "font_color": "#112756"},
@@ -254,7 +254,7 @@ button_a_last_state = True
 button_b_last_state = True
 
 # Set TESTING_MODE to True to enable manual time testing
-TESTING_MODE = True 
+TESTING_MODE = False 
 MANUAL_HOUR = 8  # Change this to test different hours (0-23)
 # Examples: 8 = morning, 14 = noon, 20 = night
 

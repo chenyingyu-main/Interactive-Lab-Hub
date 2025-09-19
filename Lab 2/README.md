@@ -199,14 +199,6 @@ Option 3. A nowadays often preferred method is to use Microsoft [VS code to remo
 
 Pro Tip: Using tools like [code-server](https://coder.com/docs/code-server/latest) you can even setup a VS Code coding environment hosted on your raspberry pi and code through a web browser on your tablet or smartphone! 
 
-## Part E. Now moved to Lab2 Part 2.
-
-## Part F. Now moved to Lab2 Part 2.
-
-## Part G. 
-## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
-
-
 # Prep for Part 2
 
 1. Pick up remaining parts for kit on Thursday lab class. Check the updated [parts list inventory](partslist.md) and let the TA know if there is any part missing.
