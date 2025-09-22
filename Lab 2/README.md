@@ -31,7 +31,10 @@ Prior to the lab session on Thursday, taken inventory of the kit parts that you 
 3. ### ✅ Prepare your Pi for lab this week
 [Follow these instructions](prep.md) to download and burn the image for your Raspberry Pi before lab Thursday.
 
-
+🔼 PROBLEMS
+1. Unable to register for The House network
+2. The phone hotspot is connected, but the computer cannot access the Raspberry Pi
+* The Raspberry Pi and the PC are assigned to different IP subnets, which prevents the devices from discovering each other on the same network.
 
 
 ## Overview
@@ -195,16 +198,16 @@ Option 2. Another way for you to edit scripts is to use VNC on your laptop to re
 
 Now you should be able to edit python scripts with Thonny on your Pi.
 
-Option 3. A nowadays often preferred method is to use Microsoft [VS code to remote connect to the Pi](https://www.raspberrypi.com/news/coding-on-raspberry-pi-remotely-with-visual-studio-code/). This gives you access to a fullly equipped and responsive code editor with terminal and file browser.  
+✅ Option 3. A nowadays often preferred method is to use Microsoft [VS code to remote connect to the Pi](https://www.raspberrypi.com/news/coding-on-raspberry-pi-remotely-with-visual-studio-code/). This gives you access to a fullly equipped and responsive code editor with terminal and file browser.  
 
 Pro Tip: Using tools like [code-server](https://coder.com/docs/code-server/latest) you can even setup a VS Code coding environment hosted on your raspberry pi and code through a web browser on your tablet or smartphone! 
 
 # Prep for Part 2
 
-1. Pick up remaining parts for kit on Thursday lab class. Check the updated [parts list inventory](partslist.md) and let the TA know if there is any part missing.
+1. ✅ Pick up remaining parts for kit on Thursday lab class. Check the updated [parts list inventory](partslist.md) and let the TA know if there is any part missing.
   
 
-2. Look at and give feedback on the Part G. for at least 2 other people in the class (and get 2 people to comment on your Part G!)
+2. [TODO] Look at and give feedback on the Part G. for at least 2 other people in the class (and get 2 people to comment on your Part G!)
 
 # Lab 2 Part 2
 
@@ -215,18 +218,25 @@ Does time have to be linear?  How do you measure a year? [In daylights? In midni
 
 Can you make time interactive? You can look in `screen_test.py` for examples for how to use the buttons.
 
-Please sketch/diagram your clock idea. (Try using a [Verplank digram](http://www.billverplank.com/IxDSketchBook.pdf)!
+Please sketch/diagram your clock idea. (Try using a [Verplank digram](http://www.billverplank.com/IxDSketchBook.pdf)!)
 
 **We strongly discourage and will reject the results of literal digital or analog clock display.**
 
+![Verplank digram](images/Lab2_diagram-1.jpg)
 
 \*\*\***A copy of your code should be in your Lab 2 Github repo.**\*\*\*
+>**Code is here: screen_clock_part2.py**
 
 
 ## Assignment that was formerly Part F. 
 ## Make a short video of your modified barebones PiClock
 
 \*\*\***Take a video of your PiClock.**\*\*\*
+
+
+**Beverage Clock**. Click the image to watch the video. 
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/i1TwwqN7FfU/0.jpg)](https://youtu.be/i1TwwqN7FfU)
 
 After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
 
@@ -237,7 +247,6 @@ After you edit and work on the scripts for Lab 2, the files should be upload bac
 ```
 
 After that, Git will ask you to login to your GitHub account to push the updates online, you will be asked to provide your GitHub user name and password. Remember to use the "Personal Access Tokens" you set up in Part A as the password instead of your account one! Go on your GitHub repo with your laptop, you should be able to see the updated files from your Pi!
-
 
 [Update your Lab Hub](pull_updates/README.md) to get the latest content and requirements for Part 2.
 
