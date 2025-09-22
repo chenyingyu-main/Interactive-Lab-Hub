@@ -31,10 +31,10 @@ Prior to the lab session on Thursday, taken inventory of the kit parts that you 
 3. ### ✅ Prepare your Pi for lab this week
 [Follow these instructions](prep.md) to download and burn the image for your Raspberry Pi before lab Thursday.
 
-🔼 **PROBLEMS**
-1. Unable to register for The House network
-2. The phone hotspot is connected, but the computer cannot access the Raspberry Pi
-* The Raspberry Pi and the PC are assigned to different IP subnets, which prevents the devices from discovering each other on the same network.
+>🔼 **PROBLEMS**
+>1. Unable to register for The House network
+>2. The phone hotspot is connected, but the computer cannot access the Raspberry Pi
+>* The Raspberry Pi and the PC are assigned to different IP subnets, which prevents the devices from discovering each other on the same network.
 
 
 ## Overview
