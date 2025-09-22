@@ -31,7 +31,7 @@ Prior to the lab session on Thursday, taken inventory of the kit parts that you 
 3. ### ✅ Prepare your Pi for lab this week
 [Follow these instructions](prep.md) to download and burn the image for your Raspberry Pi before lab Thursday.
 
-🔼 PROBLEMS
+🔼 **PROBLEMS**
 1. Unable to register for The House network
 2. The phone hotspot is connected, but the computer cannot access the Raspberry Pi
 * The Raspberry Pi and the PC are assigned to different IP subnets, which prevents the devices from discovering each other on the same network.
@@ -201,6 +201,10 @@ Now you should be able to edit python scripts with Thonny on your Pi.
 ✅ Option 3. A nowadays often preferred method is to use Microsoft [VS code to remote connect to the Pi](https://www.raspberrypi.com/news/coding-on-raspberry-pi-remotely-with-visual-studio-code/). This gives you access to a fullly equipped and responsive code editor with terminal and file browser.  
 
 Pro Tip: Using tools like [code-server](https://coder.com/docs/code-server/latest) you can even setup a VS Code coding environment hosted on your raspberry pi and code through a web browser on your tablet or smartphone! 
+## Part G.
+### Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
+
+![brainstorm](images/brainstorm.jpeg)
 
 # Prep for Part 2
 
