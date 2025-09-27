@@ -8,5 +8,5 @@ TEXT_3=${3:-"Now Ying Yu is testing Text to Speech."}
 # from https://elinux.org/RPi_Text_to_Speech_(Speech_Synthesis)
 espeak -ven+f2 -k5 -s150 --stdout  "$TEXT" | aplay
 echo "$TEXT_2" | festival --tts
-pico2wave -w hi_yingyu.wav "$TEXT_3" && aplay hi_yingyu.wav
+pico2wave -w lab3_yingyu.wav "$TEXT_3" && aplay lab3_yingyu.wav
 

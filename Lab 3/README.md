@@ -64,7 +64,7 @@ pi@ixe00:~/Interactive-Lab-Hub $ source .venv/bin/activate
 
 ### Text to Speech 
 
-In this part of lab, we are going to start peeking into the world of audio on your Pi! 
+✅ In this part of lab, we are going to start peeking into the world of audio on your Pi! 
 
 <details>
 <summary>Click to toggle contents of some testing scripts.</summary>
@@ -114,6 +114,7 @@ echo 'This sentence is spoken first. This sentence is synthesized while the firs
 ```
 </details>
 
+
 \*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
 (This shell file should be saved to your own repo for this lab.)
 
@@ -124,7 +125,8 @@ wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.30
 ```
 > Find the code on **speech-scripts/lab3_greet.sh**
 >
-> The following two videos demonstrate different Text-to-Speech (TTS) engines.
+> The following two videos demonstrate different Text-to-Speech (TTS) engines. 
+> **Click the image to watch the video.**
 >
 > * The first video shows the output using espeak and pico2wave.
 > * The second video demonstrates speech synthesis with Piper.
@@ -141,6 +143,8 @@ wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.30
 
   
 ### Speech to Text
+<details>
+<summary>Click to toggle contents of Vosk and Whisper</summary>
 
 Next setup speech to text. We are using a speech recognition engine, [Vosk](https://alphacephei.com/vosk/), which is made by researchers at Carnegie Mellon University. Vosk is amazing because it is an offline speech recognition engine; that is, all the processing for the speech recognition is happening onboard the Raspberry Pi. 
 
@@ -183,7 +187,22 @@ and
 ```
 python faster_whisper_try.py
 ```
+
+</details>
+
 \*\***Write your own shell file that verbally asks for a numerical based input (such as a phone number, zipcode, number of pets, etc) and records the answer the respondent provides.**\*\*
+
+> Find the code on 
+> * **speech-scripts/lab3_ask_number.sh** 
+> * **speech-scripts/lab3_transcribe_number.py**
+>
+> Below are the demo video and the terminal screenshot from my test run.
+> **Click the image to watch the video.**
+
+![zip_code](images/zip_code_test.png)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/l5FmxoiRhJA/0.jpg)](https://youtu.be/l5FmxoiRhJA)
+
+
 
 ### 🤖 NEW: AI-Powered Conversations with Ollama
 
