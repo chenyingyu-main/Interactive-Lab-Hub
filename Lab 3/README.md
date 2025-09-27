@@ -105,10 +105,11 @@ wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.30
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/3vvfNtMkWso/0.jpg)](https://youtu.be/3vvfNtMkWso)
 
-
-
 ---
-Bonus:
+Bonus: [Piper](https://github.com/rhasspy/piper) is another fast neural based text to speech package for raspberry pi.
+<details>
+<summary>Click to toggle contents of Piper.</summary>
+
 [Piper](https://github.com/rhasspy/piper) is another fast neural based text to speech package for raspberry pi which can be installed easily through python with:
 ```
 pip install piper-tts
@@ -126,6 +127,10 @@ echo 'This sentence is spoken first. This sentence is synthesized while the firs
   piper --model en_US-lessac-medium --output-raw | \
   aplay -r 22050 -f S16_LE -t raw -
 ```
+</details>
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/06EkF5N80uc/0.jpg)](https://youtu.be/06EkF5N80uc)
+
   
 ### Speech to Text
 
