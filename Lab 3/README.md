@@ -91,24 +91,9 @@ Now, you might wonder what exactly is a `.sh` file?
 Typically, a `.sh` file is a shell script which you can execute in a terminal. The example files we offer here are for you to figure out the ways to play with audio on your Pi!
 
 You can also play audio files directly with `aplay filename`. Try typing `aplay lookdave.wav`.
-</details>
-
-\*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
-(This shell file should be saved to your own repo for this lab.)
-
-**REMINDER: Before running any of these scripts, adjust the volume of Pi.**
-The following command can set the volume to 30% or control the volume with `pavucontrol`
-```
-wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.30 
-```
-> Find the code on **speech-scripts/lab3_greet.sh**
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/3vvfNtMkWso/0.jpg)](https://youtu.be/3vvfNtMkWso)
 
 ---
 Bonus: [Piper](https://github.com/rhasspy/piper) is another fast neural based text to speech package for raspberry pi.
-<details>
-<summary>Click to toggle contents of Piper.</summary>
 
 [Piper](https://github.com/rhasspy/piper) is another fast neural based text to speech package for raspberry pi which can be installed easily through python with:
 ```
@@ -129,7 +114,30 @@ echo 'This sentence is spoken first. This sentence is synthesized while the firs
 ```
 </details>
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/06EkF5N80uc/0.jpg)](https://youtu.be/06EkF5N80uc)
+\*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
+(This shell file should be saved to your own repo for this lab.)
+
+**REMINDER: Before running any of these scripts, adjust the volume of Pi.**
+The following command can set the volume to 30% or control the volume with `pavucontrol`
+```
+wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.30 
+```
+> Find the code on **speech-scripts/lab3_greet.sh**
+>
+> The following two videos demonstrate different Text-to-Speech (TTS) engines.
+>
+> * The first video shows the output using espeak and pico2wave.
+> * The second video demonstrates speech synthesis with Piper.
+
+<p align="center">
+  <a href="https://youtu.be/3vvfNtMkWso">
+    <img src="https://img.youtube.com/vi/3vvfNtMkWso/0.jpg" alt="Demo 1" height="200">
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://youtu.be/06EkF5N80uc">
+    <img src="https://img.youtube.com/vi/06EkF5N80uc/0.jpg" alt="Demo 2" height="200">
+  </a>
+</p>
 
   
 ### Speech to Text
