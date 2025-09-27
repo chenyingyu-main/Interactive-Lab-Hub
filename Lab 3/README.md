@@ -8,7 +8,11 @@ We will focus on **audio** as the main modality for interaction to start; these 
 
 ## Prep for Part 1: Get the Latest Content and Pick up Additional Parts 
 
-Please check instructions in [prep.md](prep.md) and complete the setup before class on Wednesday, Sept 23rd.
+✅ Please check instructions in [prep.md](prep.md) and complete the setup before class on Wednesday, Sept 23rd.
+
+<details>
+<summary>Click to toggle contents of Lab3 Prep</summary>
+
 
 ### Pick up Web Camera If You Don't Have One
 
@@ -18,7 +22,7 @@ Students who have not already received a web camera will receive their [Logitech
 
 As always, pull updates from the class Interactive-Lab-Hub to both your Pi and your own GitHub repo. There are 2 ways you can do so:
 
-**\[recommended\]**Option 1: On the Pi, `cd` to your `Interactive-Lab-Hub`, pull the updates from upstream (class lab-hub) and push the updates back to your own GitHub repo. You will need the *personal access token* for this.
+**\[recommended\]** ✅ Option 1: On the Pi, `cd` to your `Interactive-Lab-Hub`, pull the updates from upstream (class lab-hub) and push the updates back to your own GitHub repo. You will need the *personal access token* for this.
 
 ```
 pi@ixe00:~$ cd Interactive-Lab-Hub
@@ -30,10 +34,15 @@ pi@ixe00:~/Interactive-Lab-Hub $ git push
 
 Option 2: On your your own GitHub repo, [create pull request](https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/blob/2022Fall/readings/Submitting%20Labs.md) to get updates from the class Interactive-Lab-Hub. After you have latest updates online, go on your Pi, `cd` to your `Interactive-Lab-Hub` and use `git pull` to get updates from your own GitHub repo.
 
+</details>
+
+
 ## Part 1.
 ### Setup 
+<details>
+<summary>Click to toggle contents of Lab3 Setup (Env and Dependency Installation)</summary>
 
-Activate your virtual environment
+✅ Activate your virtual environment
 
 ```
 pi@ixe00:~$ cd Interactive-Lab-Hub
@@ -43,13 +52,15 @@ pi@ixe00:~/Interactive-Lab-Hub $ source .venv/bin/activate
 (.venv)pi@ixe00:~/Interactive-Lab-Hub $ 
 ```
 
-Run the setup script
+✅ Run the setup script
 ```(.venv)pi@ixe00:~/Interactive-Lab-Hub $ pip install -r requirements.txt  ```
 
-Next, run the setup script to install additional text-to-speech dependencies:
+✅ Next, run the setup script to install additional text-to-speech dependencies:
 ```
 (.venv)pi@ixe00:~/Interactive-Lab-Hub/Lab 3 $ ./setup.sh
 ```
+</details>
+
 
 ### Text to Speech 
 
