@@ -339,11 +339,13 @@ Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stu
 
 \*\***Post your storyboard and diagram here.**\*\*
 
-![IMAGE](images/storyboard.png)
+<img width="2388" height="2101" alt="storyboard" src="https://github.com/user-attachments/assets/6e44c439-4a5a-442f-9899-0222e7c695d1" />
 
 We want to use the answering functionality to create something like a **software engineer’s rubber duck**. The term rubber duck comes from the idea of rubber duck debugging, where programmers explain their code to a simple object to help them reflect on and debug their work.
 
 The rubber duck **doesn’t solve the problem** for the users. Instead, it prompts users to verbalize their thought process, helping users clarify bugs until they reach the solution themselves.
+
+![IMG_561787F51844-1](https://github.com/user-attachments/assets/9fcdb740-f1fe-4278-808f-990c54dd5f53)
 
 ---
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses. 
@@ -355,11 +357,13 @@ Write out what you imagine the dialogue to be. Use cards, post-its, or whatever 
 Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing.  Please record this interaction (for example, using Zoom's record feature).
 
 \*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
+> Shreya designed the script, while Ying Yu acted as the user without knowing the script. We discovered that if the rubber duck keeps giving constant feedback, it can actually become a bit annoying, and the user may also be unsure when the interaction should come to an end.
 
 ### Wizarding with the Pi (optional)
 In the [demo directory](./demo), you will find an example Wizard of Oz project. In that project, you can see how audio and sensor data is streamed from the Pi to a wizard controller that runs in the browser.  You may use this demo code as a template. By running the `app.py` script, you can see how audio and sensor data (Adafruit MPU-6050 6-DoF Accel and Gyro Sensor) is streamed from the Pi to a wizard controller that runs in the browser `http://<YouPiIPAddress>:5000`. You can control what the system says from the controller as well!
 
 \*\***Describe if the dialogue seemed different than what you imagined, or when acted out, when it was wizarded, and how.**\*\*
+> We ran into some issues during this part, especially with Python version compatibility. Because of that, it was difficult for us to properly run the demo and act out the dialogue as intended. We plan to revisit and resolve these technical challenges in Part 2.
 
 # Lab 3 Part 2
 
@@ -414,6 +418,7 @@ Answer the following:
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
 \*\**your answer here*\*\*
+
 
 
 
