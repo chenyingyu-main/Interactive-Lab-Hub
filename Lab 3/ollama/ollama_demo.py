@@ -29,7 +29,7 @@ def speak_text(text):
     # Clean text to avoid encoding issues
     clean_text = text.encode('ascii', 'ignore').decode('ascii')
     print(f"Assistant: {clean_text}")
-    subprocess.run(['espeak', f'"{clean_text}"'], shell=True, check=False)
+    subprocess.run(['espeak', clean_text], check=False)
 
 def query_ollama(prompt, model="phi3:mini"):
     """Send a text prompt to Ollama and get response"""
@@ -74,11 +74,14 @@ def voice_response_demo():
     
     while True:
         user_input = input("\nYour message: ")
+        print("DEBUG: after input()", user_input)   # ← debug print
+
         if user_input.lower() in ['quit', 'exit']:
             break
-            
+
         print("Thinking...")
         response = query_ollama(user_input)
+        print(f"Ollama: {response}")
         speak_text(response)
 
 def check_ollama():

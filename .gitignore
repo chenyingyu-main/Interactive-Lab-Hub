@@ -4,3 +4,7 @@
 venv
 venv*
 __*
+*/ollama_venv/
+*_venv/
+venv/
+env/

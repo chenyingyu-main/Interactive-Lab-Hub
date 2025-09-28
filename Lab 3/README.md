@@ -1,5 +1,7 @@
 # Chatterboxes
-**NAMES OF COLLABORATORS HERE**
+**NAMES OF COLLABORATORS HERE: [Shreya Kethi Reddy](https://github.com/littleredpolkadot/Interactive-Lab-Hub)** 
+
+
 [![Watch the video](https://user-images.githubusercontent.com/1128669/135009222-111fe522-e6ba-46ad-b6dc-d1633d21129c.png)](https://www.youtube.com/embed/Q8FWzLMobx0?start=19)
 
 In this lab, we want you to design interaction with a speech-enabled device--something that listens and talks to you. This device can do anything *but* control lights (since we already did that in Lab 1).  First, we want you first to storyboard what you imagine the conversational interaction to be like. Then, you will use wizarding techniques to elicit examples of what people might say, ask, or respond.  We then want you to use the examples collected from at least two other people to inform the redesign of the device.
@@ -125,7 +127,7 @@ wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.30
 ```
 > Find the code on **speech-scripts/lab3_greet.sh**
 >
-> The following two videos demonstrate different Text-to-Speech (TTS) engines. 
+> The following **two videos** demonstrate different Text-to-Speech (TTS) engines. 
 > **Click the image to watch the video.**
 >
 > * The first video shows the output using espeak and pico2wave.
@@ -133,11 +135,11 @@ wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.30
 
 <p align="center">
   <a href="https://youtu.be/3vvfNtMkWso">
-    <img src="https://img.youtube.com/vi/3vvfNtMkWso/0.jpg" alt="Demo 1" height="200">
+    <img src="https://img.youtube.com/vi/3vvfNtMkWso/0.jpg" alt="Demo 1" height="300">
   </a>
   &nbsp;&nbsp;&nbsp;
   <a href="https://youtu.be/06EkF5N80uc">
-    <img src="https://img.youtube.com/vi/06EkF5N80uc/0.jpg" alt="Demo 2" height="200">
+    <img src="https://img.youtube.com/vi/06EkF5N80uc/0.jpg" alt="Demo 2" height="300">
   </a>
 </p>
 
@@ -202,11 +204,12 @@ python faster_whisper_try.py
 ![zip_code](images/zip_code_test.png)
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/l5FmxoiRhJA/0.jpg)](https://youtu.be/l5FmxoiRhJA)
 
-
-
 ### 🤖 NEW: AI-Powered Conversations with Ollama
 
 Want to add intelligent conversation capabilities to your voice projects? **Ollama** lets you run AI models locally on your Raspberry Pi for sophisticated dialogue without requiring internet connectivity!
+
+<details>
+<summary>Click to toggle contents of Ollama.</summary>
 
 #### Quick Start with Ollama
 
@@ -234,12 +237,12 @@ pip install -r ollama_requirements.txt
 
 We've created three Ollama integration scripts for different use cases:
 
-**1. Basic Demo** - Learn how Ollama works:
+**1. ✅ Basic Demo** - Learn how Ollama works:
 ```bash
 python3 ollama_demo.py
 ```
 
-**2. Voice Assistant** - Full speech-to-text + AI + text-to-speech:
+**2. ✅ Voice Assistant** - Full speech-to-text + AI + text-to-speech:
 ```bash
 python3 ollama_voice_assistant.py
 ```
@@ -269,9 +272,45 @@ answer = ask_ai("How should I greet users?")
 
 **📖 Complete Setup Guide**: See `OLLAMA_SETUP.md` for detailed instructions, troubleshooting, and advanced usage!
 
+</details>
+
+
 \*\***Try creating a simple voice interaction that combines speech recognition, Ollama processing, and text-to-speech output. Document what you built and how users responded to it.**\*\*
 
+> Find the code on **ollama/lab3_ollama_food.py**
+>
+> The following **videos** is the demo for the Food Recommendation Assistant. 
+> **Click the image to watch the video.**
+
+[![image](https://img.youtube.com/vi/__usS4v8-7I/0.jpg)](https://youtu.be/__usS4v8-7I)
+
+The screenshots below show the conversation logs for both text-to-speech and speech-to-text. Since there are many warnings when running on the Pi, screenshots make the record clearer.
+
+![food1](images/food1.png)
+![food2](images/food2.png)
+
+This flowchart shows the basic workflow of the voice-controlled food recommendation system:
+
+1. Start Program - Initialize the voice assistant
+2. Voice Input - Continuously listen for user speech
+3. Voice Detection - Check if voice input is detected
+  * If no voice detected, continue listening
+  * If voice detected, proceed to next step
+4. Convert to Text - Transform user speech into text
+5. Send to **Ollama AI** - Pass the text to AI for processing
+6. Get Food Suggestions - AI analyzes the request and generates food recommendations
+7. Speak Response - Convert AI suggestions back to speech and play to user
+8. Loop - Return to voice input for next conversation
+
+The system runs in a continuous loop until the user says "quit" to end the program. This follows the typical voice assistant interaction pattern: **Listen → Understand → Process → Respond → Repeat**.
+Below is a simplified flowchart of the process:
+![food2](images/food3.jpeg)
+
+
 ### Serving Pages
+
+<details>
+<summary>Click to toggle contents of webserver.</summary>
 
 In Lab 1, we served a webpage with flask. In this lab, you may find it useful to serve a webpage for the controller on a remote device. Here is a simple example of a webserver.
 
@@ -287,14 +326,26 @@ pi@ixe00:~/Interactive-Lab-Hub/Lab 3 $ python server.py
  * Debugger is active!
  * Debugger PIN: 162-573-883
 ```
-From a remote browser on the same network, check to make sure your webserver is working by going to `http://<YourPiIPAddress>:5000`. You should be able to see "Hello World" on the webpage.
+
+</details>
+
+✅ From a remote browser on the same network, check to make sure your webserver is working by going to `http://<YourPiIPAddress>:5000`. You should be able to see "Hello World" on the webpage.
 
 ### Storyboard
+
+**Collaborate with [Shreya Kethi Reddy](https://github.com/littleredpolkadot/Interactive-Lab-Hub)**
 
 Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stuck? Make a device that talks for dogs. If that is too stupid, find an application that is better than that.) 
 
 \*\***Post your storyboard and diagram here.**\*\*
 
+![IMAGE](images/storyboard.png)
+
+We want to use the answering functionality to create something like a **software engineer’s rubber duck**. The term rubber duck comes from the idea of rubber duck debugging, where programmers explain their code to a simple object to help them reflect on and debug their work.
+
+The rubber duck **doesn’t solve the problem** for the users. Instead, it prompts users to verbalize their thought process, helping users clarify bugs until they reach the solution themselves.
+
+---
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses. 
 
 \*\***Please describe and document your process.**\*\*
