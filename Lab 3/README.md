@@ -402,7 +402,13 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 ## Prep for Part 2
 
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings...
+> * We realized that the wording could be more varied — in our previous script, the bear’s responses were all pre-set, which made the interaction feel rigid and unnatural. → This time, we plan to **have a real person responding behind the scenes** (for demonstration purposes).
+> * The timing also needs improvement. Sometimes, when the user pauses, it means they are thinking, but the bear’s response **interrupts their thought process.** → We might add a **button** to manually activate or deactivate the bear’s responses.
+> * As seen in Part A of the video, when the user finds the solution, the bear sometimes continues asking questions because it’s unaware of the situation, which can be confusing. → To fix this, we could use a **button or positive keywords** like “Oh, I got it!” to let the bear know when to deactivate.
 2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
+> Button control to activate/deactivate the bear. (Alternatively, users could tap or pat the bear’s head to start or pause the interaction.)
+>
+> There could also be some non-speech audio cues, such as beeping sounds to indicate that the bear is recording or responding.
 3. Make a new storyboard, diagram and/or script based on these reflections.
 
 ## Prototype your system
