@@ -402,21 +402,23 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 ## Prep for Part 2
 
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings...
-> * We realized that the wording could be more varied — in our previous script, the bear’s responses were all pre-set, which made the interaction feel rigid and unnatural. → This time, we plan to **have a real person responding behind the scenes** (for demonstration purposes).
-> * The timing also needs improvement. Sometimes, when the user pauses, it means they are thinking, but the bear’s response **interrupts their thought process.** → We might add a **button** to manually activate or deactivate the bear’s responses.
-> * As seen in Part A of the video, when the user finds the solution, the bear sometimes continues asking questions because it’s unaware of the situation, which can be confusing. → To fix this, we could use a **button or positive keywords** like “Oh, I got it!” to let the bear know when to deactivate.
+> * We realized that the wording could be more varied — in our previous script, the bear’s responses were all pre-set, which made the interaction feel rigid and unnatural. → This time, we plan to have a **real person responding** behind the scenes (for demonstration purposes).
+> * Sometimes, when the user pauses, it means they are thinking, but the bear’s response **interrupts** their thought process. → We plan to add a **recording button** (with a light indicator): when the button is pressed and the light is on, it records; pressing it again turns off the light and stops recording.
+> * As seen in Part A of the video, when the user finds the solution, the bear sometimes continues asking questions because it’s unaware of the situation, which can be confusing. → We could add a **button (OFF)** to deactivate the bear, or let it **detect  keywords** (from recording button) such as “Oh, I’m good” to automatically end the session.
+> * Starting the interaction too abruptly feels awkward. → We plan to include a **greeting phase**, where the bear first greets the user and confirms what problem they are working on before beginning the conversation.
+
 2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
-> Button control to activate/deactivate the bear. (Alternatively, users could tap or pat the bear’s head to start or pause the interaction.)
->
-> There could also be some non-speech audio cues, such as beeping sounds to indicate that the bear is recording or responding.
+
+> We plan to include **two physical buttons with LED indicators** to make the interaction clearer. One is a **recording button**, which lights up while recording to show that the bear is “listening.” The other is a **OFF button** that allows the user to manually deactivate the bear at any time. These physical controls help users easily understand the system’s current state and reduce confusion during interaction.
+
 3. Make a new storyboard, diagram and/or script based on these reflections.
 
 ## Prototype your system
 
 The system should:
-* use the Raspberry Pi 
-* use one or more sensors
-* require participants to speak to it. 
+* ✅ use the Raspberry Pi 
+* ✅ use one or more sensors: 2 buttons
+* ✅ require participants to speak to it. 
 
 *Document how the system works*
 
