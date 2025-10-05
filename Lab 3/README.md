@@ -125,6 +125,8 @@ The following command can set the volume to 30% or control the volume with `pavu
 ```
 wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.30 
 ```
+
+Ying Yu:
 > Find the code on **speech-scripts/lab3_greet.sh**
 >
 > The following **two videos** demonstrate different Text-to-Speech (TTS) engines. 
@@ -142,6 +144,13 @@ wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.30
     <img src="https://img.youtube.com/vi/06EkF5N80uc/0.jpg" alt="Demo 2" height="300">
   </a>
 </p>
+
+Shreya:
+> Code is in speech-scripts/greet_shreya.sh
+> 
+> The script uses GoogleTTS to greet Shreya
+> 
+> [Video](https://drive.google.com/file/d/14bAQtoSJ84QoHgKTpH4GYF070SGiDLXs/view?usp=sharing)
 
   
 ### Speech to Text
@@ -194,6 +203,7 @@ python faster_whisper_try.py
 
 \*\***Write your own shell file that verbally asks for a numerical based input (such as a phone number, zipcode, number of pets, etc) and records the answer the respondent provides.**\*\*
 
+Ying Yu:
 > Find the code on 
 > * **speech-scripts/lab3_ask_number.sh** 
 > * **speech-scripts/lab3_transcribe_number.py**
@@ -203,6 +213,18 @@ python faster_whisper_try.py
 
 ![zip_code](images/zip_code_test.png)
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/l5FmxoiRhJA/0.jpg)](https://youtu.be/l5FmxoiRhJA)
+
+
+Shreya:
+> Code is speech-scripts/ask_number_siblings.sh & speech-scripts/ask_num_siblings.py
+> 
+> The code verbally prompts user for the number of siblings, processes the response, and prints it in the terminal
+> 
+> [Video](https://drive.google.com/file/d/1pHRaCt3tzJl87oIlbdMygrmKNYHMUe0M/view?usp=sharing)
+> 
+> As shown in the video, the number one is printed in the terminal as the user responded with a one
+> <img width="1403" height="195" alt="image" src="https://github.com/user-attachments/assets/bebee056-1a0a-4b45-bca8-5418fc6bddc2" />
+
 
 ### 🤖 NEW: AI-Powered Conversations with Ollama
 
@@ -426,6 +448,7 @@ Answer the following:
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
 \*\**your answer here*\*\*
+
 
 
 
