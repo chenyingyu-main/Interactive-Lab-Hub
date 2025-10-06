@@ -456,24 +456,37 @@ The start and end of recording are controlled by buttons. Depending on the user�
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
 
-Answer the following:
+<!-- Answer the following: -->
 
 ### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
-
+<!-- \*\**your answer here*\*\* -->
+> * **Switch the button color:** Users suggested that it could be more clear that the green button was set for recording and the red button was set for stopping the conversation.
+> * During recording, **the user’s finger often blocked the LED light**, making it hard to tell whether the system was active.
+> * The speaker output was sometimes **choppy**, and when the speech input was too long, the **processing time became noticeable**, leaving users uncertain if the system was still working.
+> * Some users also expected the bear to give direct answers, so we had to clarify that it was not an AI assistant but rather a “rubber duck” to help them think through their problems.
 ### What worked well about the controller and what didn't?
+<!-- \*\**your answer here*\*\* -->
 
-\*\**your answer here*\*\*
+> * From the tester's perspective, using buttons to start and stop recording helped keep control over timing.
+> * **Speech processing delays** made it hard for the wizard to know whether the system was responding correctly.
+> * Since the system relied on keyword detection, it occasionally gave **irrelevant responses**, especially when users spoke politely (e.g., saying “not really” instead of “no”).
+> * We initially planned to use **long press** for recording, which would have been more intuitive, but we couldn’t implement it successfully in this version.
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
 
-\*\**your answer here*\*\*
-
+<!-- \*\**your answer here*\*\* -->
+> * Include **“repeat”** keyword detection or a mechanism to recognize when users ask to repeat the output.
+> * Add a short pre-speech buffer to prevent the speaker’s output from being cut off.
+> * Provide clearer visual or auditory indicators of the system state, since **the LED light on the button can be easily blocked**.
+> * Give feedback during processing (e.g., a short tone or blinking light) to show the system is still working.
+> * Simplify the instruction speech, since users tended to lose patience with long explanations.
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
-\*\**your answer here*\*\*
-
+<!-- \*\**your answer here*\*\* -->
+> The system could be used to collect **a dataset of user speech and corresponding keyword detections**, helping analyze how people describe their thought processes while debugging or problem-solving.
+>
+> In the future, adding additional sensing modalities such as a camera or touch sensors could help detect user engagement — for example, **facial expressions, hesitation, or physical interaction with the bear (petting)** — providing richer data for training a more autonomous conversational model.
 
 
 
