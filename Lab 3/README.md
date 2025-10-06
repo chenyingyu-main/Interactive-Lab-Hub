@@ -440,6 +440,8 @@ The start and end of recording are controlled by buttons. Depending on the userâ
 **Testing with Users (Video):**
 <!-- put the video link here -->
 
+> The code is here: **ollama/DebugBear/speak.py**
+
 
 <details>
   <summary><strong>Submission Cleanup Reminder (Click to Expand)</strong></summary>
