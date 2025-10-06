@@ -361,20 +361,22 @@ Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stu
 
 \*\***Post your storyboard and diagram here.**\*\*
 
-<img width="2388" height="2101" alt="storyboard" src="https://github.com/user-attachments/assets/6e44c439-4a5a-442f-9899-0222e7c695d1" />
+![IMG_561787F51844-1](images/story1.png)
+
 
 We want to use the answering functionality to create something like a **software engineer’s rubber duck**. The term rubber duck comes from the idea of rubber duck debugging, where programmers explain their code to a simple object to help them reflect on and debug their work.
 
 The rubber duck **doesn’t solve the problem** for the users. Instead, it prompts users to verbalize their thought process, helping users clarify bugs until they reach the solution themselves.
 
-![IMG_561787F51844-1](https://github.com/user-attachments/assets/9fcdb740-f1fe-4278-808f-990c54dd5f53)
+![IMG_561787F51844-1](images/diagram1.png)
 
 ---
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses. 
 
 \*\***Please describe and document your process.**\*\*
 
-<img width="1036" height="728" alt="image" src="https://github.com/user-attachments/assets/95c79ba2-fe15-451f-98bb-c2b18eab62f8" />
+![IMG_561787F51844-1](images/script1.png)
+
 
 When creating the script, we imagine a process that will let the user work through problems themselves. Thus we imagine scenarios where the duck (which will take the form of some kind of cute stuffed toy and in this process diagram it is a bear) will offer support to the user through means of lending an ear to their frustration and nudging them to take breaks like a supportive friend. The most primary form of interaction is the process where a user will repeatedly interact with the duck as a means to work through a problem and while explaining come to a realization themselves.
 
@@ -402,7 +404,6 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 ## Prep for Part 2
 
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings...
-> * We realized that the wording could be more varied — in our previous script, the bear’s responses were all pre-set, which made the interaction feel rigid and unnatural. → This time, we plan to have a **real person responding** behind the scenes (for demonstration purposes).
 > * Sometimes, when the user pauses, it means they are thinking, but the bear’s response **interrupts** their thought process. → We plan to add a **recording button** (with a light indicator): when the button is pressed and the light is on, it records; pressing it again turns off the light and stops recording.
 > * As seen in Part A of the video, when the user finds the solution, the bear sometimes continues asking questions because it’s unaware of the situation, which can be confusing. → We could add a **button (OFF)** to deactivate the bear, or let it **detect  keywords** (from recording button) such as “Oh, I’m good” to automatically end the session.
 > * Starting the interaction too abruptly feels awkward. → We plan to include a **greeting phase**, where the bear first greets the user and confirms what problem they are working on before beginning the conversation.
@@ -412,6 +413,10 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 > We plan to include **two physical buttons with LED indicators** to make the interaction clearer. One is a **recording button**, which lights up while recording to show that the bear is “listening.” The other is a **OFF button** that allows the user to manually deactivate the bear at any time. These physical controls help users easily understand the system’s current state and reduce confusion during interaction.
 
 3. Make a new storyboard, diagram and/or script based on these reflections.
+![IMG_561787F51844-1](images/diagram2.jpg)
+![IMG_561787F51844-1](images/story2.jpg)
+![script](images/script2.jpeg)
+
 
 ## Prototype your system
 
@@ -420,9 +425,21 @@ The system should:
 * ✅ use one or more sensors: 2 buttons
 * ✅ require participants to speak to it. 
 
-*Document how the system works*
+<!-- *Document how the system works*
 
-*Include videos or screencaptures of both the system and the controller.*
+*Include videos or screencaptures of both the system and the controller.* -->
+
+**Controller Logic Flowchart:**
+![control](images/control.jpg)
+The start and end of recording are controlled by buttons. Depending on the user’s current task (greeting, describing the problem, or responding whether the interaction was helpful and should continue), the system decides whether to loop back for another recording or end the session.
+
+**System Setup Overview – Wizard Side:**
+![system](images/system.jpeg)
+
+
+**Testing with Users (Video):**
+<!-- put the video link here -->
+
 
 <details>
   <summary><strong>Submission Cleanup Reminder (Click to Expand)</strong></summary>
