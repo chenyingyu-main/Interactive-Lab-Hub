@@ -437,7 +437,7 @@ The start and end of recording are controlled by buttons. Depending on the user�
 ![system](images/system.jpeg)
 
 
-**Testing with Users (Video):**
+**Testing with Users (Video): [Testing Interaction with Debug Bear](https://drive.google.com/file/d/1W9oqTSm5SA8ItorzSIi6bjKh0dg2zPxt/view)**
 <!-- put the video link here -->
 
 > The code is here: **ollama/DebugBear/speak.py**
@@ -489,6 +489,7 @@ Try to get at least two people to interact with your system. (Ideally, you would
 > The system could be used to collect **a dataset of user speech and corresponding keyword detections**, helping analyze how people describe their thought processes while debugging or problem-solving.
 >
 > In the future, adding additional sensing modalities such as a camera or touch sensors could help detect user engagement — for example, **facial expressions, hesitation, or physical interaction with the bear (petting)** — providing richer data for training a more autonomous conversational model.
+
 
 
 
