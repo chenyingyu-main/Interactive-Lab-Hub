@@ -12,7 +12,7 @@
 	- Photos/videos of your Twizzler (or other object) capacitive sensor setup
 	- Code and terminal output showing touch detection
 
-*️⃣ **B. More Sensors**
+✅*️⃣ **B. More Sensors**
 	- Photos/videos of each sensor tested (light/proximity, rotary encoder, joystick, distance sensor)
 	- Code and terminal output for each sensor
 
@@ -348,6 +348,7 @@ You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_Proxi
 
 Usually, sensors need to be positioned in specific locations or orientations to make them useful for their application. Now that you've tried a bunch of the sensors, pick one that you would like to use, and an application where you use the output of that sensor for an interaction. For example, you can use a distance sensor to measure someone's height if you position it overhead and get them to stand under it.
 
+GeistesBlitz 閃靈快手
 
 **\*\*\*Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful.\*\*\***
 
