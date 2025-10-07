@@ -1,5 +1,9 @@
 /.venv
 ollama_venv/
+*/ollama_venv/
 __pycache__/
 *.pyc
 .env
+*_venv/
+venv/
+env/

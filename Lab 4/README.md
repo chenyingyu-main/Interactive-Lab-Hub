@@ -1,21 +1,10 @@
 
 # Ph-UI!!!
 
+## Lab 4 Deliverables \& Submission for Lab 4
+
 <details>
-	<summary><strong>Instructions for Students (Click to Expand)</strong></summary>
-  
-	**Submission Cleanup Reminder:**
-	- This README.md contains extra instructional text for guidance.
-	- Before submitting, remove all instructional text and example prompts from this file.
-	- You may delete these sections or use the toggle/hide feature in VS Code to collapse them for a cleaner look.
-	- Your final submission should be neat, focused on your own work, and easy to read for grading.
-  
-	This helps ensure your README.md is clear, professional, and uniquely yours!
-</details>
-
----
-
-## Lab 4 Deliverables
+	<summary>📋 Deliverables for Students</summary>
 
 ### Part 1 (Week 1)
 **Submit the following for Part 1:**  
@@ -54,6 +43,39 @@
 
 ---
 
+</details>
+
+<details>
+<summary>📋 Lab 4 Submission Summary</summary>
+
+The deliverables for this lab are, writings, sketches, photos, and videos that show what your prototype:
+* "Looks like": shows how the device should look, feel, sit, weigh, etc.
+* "Works like": shows what the device can do.
+* "Acts like": shows how a person would interact with the device.
+
+For submission, the readme.md page for this lab should be edited to include the work you have done:
+* Upload any materials that explain what you did, into your lab 4 repository, and link them in your lab 4 readme.md.
+* Link your Lab 4 readme.md in your main Interactive-Lab-Hub readme.md. 
+* Labs are due on Mondays, make sure to submit your Lab 4 readme.md to Canvas.
+
+</details>
+
+---
+<details>
+	<summary><strong>Cleanup Instructions for Students (Click to Expand)</strong></summary>
+  
+	**Submission Cleanup Reminder:**
+	- This README.md contains extra instructional text for guidance.
+	- Before submitting, remove all instructional text and example prompts from this file.
+	- You may delete these sections or use the toggle/hide feature in VS Code to collapse them for a cleaner look.
+	- Your final submission should be neat, focused on your own work, and easy to read for grading.
+  
+	This helps ensure your README.md is clear, professional, and uniquely yours!
+</details>
+
+
+
+
 ## Lab Overview
 **NAMES OF COLLABORATORS HERE**
 
@@ -62,7 +84,12 @@ For lab this week, we focus both on sensing, to bring in new modes of input into
 
 ## Part 1 Lab Preparation
 
-### Get the latest content:
+### ✅ Get the latest content
+
+<details>
+<summary> Pull Updates from Class Repo
+</summary>
+
 As always, pull updates from the class Interactive-Lab-Hub to both your Pi and your own GitHub repo. As we discussed in the class, there are 2 ways you can do so:
 
 
@@ -77,9 +104,17 @@ pi@ixe00:~/Interactive-Lab-Hub $ git push
 
 Option 2: On your own GitHub repo, [create pull request](https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/blob/2021Fall/readings/Submitting%20Labs.md) to get updates from the class Interactive-Lab-Hub. After you have latest updates online, go on your Pi, `cd` to your `Interactive-Lab-Hub` and use `git pull` to get updates from your own GitHub repo.
 
-Option 3: (preferred) use the Github.com interface to update the changes.
+✅ Option 3: (preferred) use the Github.com interface to update the changes.
 
-### Start brainstorming ideas by reading: 
+</details>
+
+
+
+### Start brainstorming ideas by reading
+
+<details>
+<summary> Toggle to see the all the amazing reading and prototype :)
+</summary>
 
 * [What do prototypes prototype?](https://www.semanticscholar.org/paper/What-do-Prototypes-Prototype-Houde-Hill/30bc6125fab9d9b2d5854223aeea7900a218f149)
 * [Paper prototyping](https://www.uxpin.com/studio/blog/paper-prototyping-the-practical-beginners-guide/) is used by UX designers to quickly develop interface ideas and run them by people before any programming occurs. 
@@ -89,7 +124,14 @@ Option 3: (preferred) use the Github.com interface to update the changes.
 * [Dyson Vacuum Cardboard Prototypes](http://media.dyson.com/downloads/JDF/JDF_Prim_poster05.pdf)
 <p align="center"><img src="https://dysonthedesigner.weebly.com/uploads/2/6/3/9/26392736/427342_orig.jpg"  width="200" > </p>
 
+</details>
+
+
 ### Gathering materials for this lab:
+
+<details>
+<summary> Toggle to see the material list
+</summary>
 
 * Cardboard (start collecting those shipping boxes!)
 * Found objects and materials--like bananas and twigs.
@@ -100,17 +142,10 @@ Option 3: (preferred) use the Github.com interface to update the changes.
 
 (We do offer shared cutting board, cutting tools, and markers on the class cart during the lab, so do not worry if you don't have them!)
 
-## Deliverables \& Submission for Lab 4
+</details>
 
-The deliverables for this lab are, writings, sketches, photos, and videos that show what your prototype:
-* "Looks like": shows how the device should look, feel, sit, weigh, etc.
-* "Works like": shows what the device can do.
-* "Acts like": shows how a person would interact with the device.
 
-For submission, the readme.md page for this lab should be edited to include the work you have done:
-* Upload any materials that explain what you did, into your lab 4 repository, and link them in your lab 4 readme.md.
-* Link your Lab 4 readme.md in your main Interactive-Lab-Hub readme.md. 
-* Labs are due on Mondays, make sure to submit your Lab 4 readme.md to Canvas.
+
 
 
 ## Lab Overview
