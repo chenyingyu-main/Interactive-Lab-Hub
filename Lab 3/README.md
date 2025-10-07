@@ -458,6 +458,8 @@ The start and end of recording are controlled by buttons. Depending on the user�
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
 
+**THANKS TO: Amanda & Miriam**
+
 <!-- Answer the following: -->
 
 ### What worked well about the system and what didn't?
@@ -489,6 +491,7 @@ Try to get at least two people to interact with your system. (Ideally, you would
 > The system could be used to collect **a dataset of user speech and corresponding keyword detections**, helping analyze how people describe their thought processes while debugging or problem-solving.
 >
 > In the future, adding additional sensing modalities such as a camera or touch sensors could help detect user engagement — for example, **facial expressions, hesitation, or physical interaction with the bear (petting)** — providing richer data for training a more autonomous conversational model.
+
 
 
 
