@@ -189,7 +189,7 @@ F) [Record the interaction](#part-f)
 </details>
 
 ### Part A
-### Capacitive Sensing, a.k.a. Human-Twizzler Interaction 
+### ✅ Capacitive Sensing, a.k.a. Human-Twizzler Interaction 
 <details>
 <summary>Capacitive sensor instructions</summary>
 
@@ -225,7 +225,7 @@ Twizzler 6 touched!
 ### Part B
 ### More sensors
 
-#### Light/Proximity/Gesture sensor (APDS-9960)
+#### ✅  Light/Proximity/Gesture sensor (APDS-9960)
 <details>
 <summary>Adafruit APDS-9960</summary>
 
