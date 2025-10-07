@@ -4,7 +4,7 @@
 ## Lab 4 Deliverables \& Submission for Lab 4
 
 <details>
-	<summary>📋 Deliverables for Students</summary>
+	<summary>❗️📋 Deliverables for Students</summary>
 
 ### Part 1 (Week 1)
 **Submit the following for Part 1:**  
@@ -46,7 +46,7 @@
 </details>
 
 <details>
-<summary>📋 Lab 4 Submission Summary</summary>
+<summary>❗️📋 Lab 4 Submission Summary</summary>
 
 The deliverables for this lab are, writings, sketches, photos, and videos that show what your prototype:
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
@@ -165,7 +165,10 @@ F) [Record the interaction](#part-f)
 
 ## The Report (Part 1: A-D, Part 2: E-F)
 
-### Quick Start: Python Environment Setup
+### ✅ Quick Start: Python Environment Setup
+
+<details>
+<summary>Toggle to see the envrionment setup </summary>
 
 1. **Create and activate a virtual environment in Lab 4:**
 	```bash
@@ -183,8 +186,12 @@ F) [Record the interaction](#part-f)
 	```
 	If you see "Hello blinka!", your setup is correct. If not, follow the troubleshooting steps in the file or ask for help.
 
+</details>
+
 ### Part A
 ### Capacitive Sensing, a.k.a. Human-Twizzler Interaction 
+<details>
+<summary>Capacitive sensor instructions</summary>
 
 We want to introduce you to the [capacitive sensor](https://learn.adafruit.com/adafruit-mpr121-gator) in your kit. It's one of the most flexible input devices we are able to provide. At boot, it measures the capacitance on each of the 12 contacts. Whenever that capacitance changes, it considers it a user touch. You can attach any conductive material. In your kit, you have copper tape that will work well, but don't limit yourself! In the example below, we use Twizzlers--you should pick your own objects.
 
@@ -203,6 +210,15 @@ These Twizzlers are connected to pads 6 and 10. When you run the code and touch 
 Twizzler 10 touched!
 Twizzler 6 touched!
 ```
+</details>
+
+![cap1](images/cap1.JPG)
+
+> I also try the sensor using the alligator clip.
+>
+>BTW, the paper towel is wet so that it can conduct electricity.
+
+![cap1](images/cap2.JPG)
 
 ### Part B
 ### More sensors
