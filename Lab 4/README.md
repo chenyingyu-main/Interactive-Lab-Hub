@@ -293,6 +293,7 @@ You can go to the [Adafruit Learn Page](https://learn.adafruit.com/adafruit-i2c-
 </details>
 
 > I realized soldering wasn't necessary for this setup :) 🎥 The testing video is shown below.
+> 
 > [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/eFCc-bMzxYs/0.jpg)](https://youtu.be/eFCc-bMzxYs)
 
 #### ✅ Joystick 
@@ -316,6 +317,7 @@ You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_Joyst
 </details>
 
 > 🎥 See the tesing video down below.
+> 
 > [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/nPrkx-3D8Xk/0.jpg)](https://youtu.be/nPrkx-3D8Xk)
 
 #### ✅ Distance Sensor
@@ -337,6 +339,7 @@ You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_Proxi
 </details>
 
 > The detection range of the SparkFun proximity sensor is indeed wider, as shown in the testing video below. 🎥 
+>
 > [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/xmkhN6yoABM/0.jpg)](https://youtu.be/xmkhN6yoABM)
 
 ### Part C
