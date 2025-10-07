@@ -212,18 +212,22 @@ Twizzler 6 touched!
 ```
 </details>
 
-![cap1](images/cap1.JPG)
 
-> I also try the sensor using the alligator clip.
+> For part A, I didn’t modify the code — I just experimented with different setups :)
 >
->BTW, the paper towel is wet so that it can conduct electricity.
+> I ran the code and touched the sensor with my bare hand.
+> 
+> I also tried connecting the sensor using an alligator clip (channel 7). BTW, the paper towel is damp so that it can conduct electricity.
 
-![cap1](images/cap2.JPG)
+![cap1](images/cap1.JPG)
+![cap2](images/cap2.JPG)
 
 ### Part B
 ### More sensors
 
 #### Light/Proximity/Gesture sensor (APDS-9960)
+<details>
+<summary>Adafruit APDS-9960</summary>
 
 We here want you to get to know this awesome sensor [Adafruit APDS-9960](https://www.adafruit.com/product/3595). It is capable of sensing proximity, light (also RGB), and gesture! 
  
@@ -242,6 +246,29 @@ Connect it to your pi with Qwiic connector and try running the three example scr
 ```
 
 You can go the the [Adafruit GitHub Page](https://github.com/adafruit/Adafruit_CircuitPython_APDS9960) to see more examples for this sensor!
+
+
+</details>
+
+> **Test Proximity:** higher values indicating that something is close to the sensor. (from Adafruit GitHub Page) 🎥 Watch the video below.
+> [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/WFwUsQmDPsw/0.jpg)](https://youtu.be/WFwUsQmDPsw)
+
+> **Test Gesture:** The sensor was a bit less responsive than expected. 🎥 See the testing video below.
+> [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/8LWAxlkJQjM/0.jpg)](https://youtu.be/8LWAxlkJQjM)
+
+> **Test Color:** To verify the detected color, I added the following lines of code to display the RGB values. (Code can be found here: **color_test.py**)
+> ```
+> red = int((r / c) * 255)
+> green = int((g / c) * 255)
+> blue = int((b / c) * 255)
+> print(red, green, blue)
+>```
+> Based on the RGB values, I looked up the corresponding color on a [website](https://htmlcolorcodes.com/). The following photos show the test results.
+> ![color](images/color1.JPG)
+> ![color](images/color2.JPG)
+
+**Reference:**
+* Color Code Website: https://htmlcolorcodes.com/
 
 #### Rotary Encoder 
 

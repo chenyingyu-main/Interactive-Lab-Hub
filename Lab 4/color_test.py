@@ -27,4 +27,12 @@ while True:
 
     print("color temp {}".format(colorutility.calculate_color_temperature(r, g, b)))
     print("light lux {}".format(colorutility.calculate_lux(r, g, b)))
-    time.sleep(0.5)
+    print("----------------")
+    red = int((r / c) * 255)
+    green = int((g / c) * 255)
+    blue = int((b / c) * 255)
+    print(red, green, blue)
+    print("----------------")
+
+
+    time.sleep(5)
