@@ -78,6 +78,7 @@ For submission, the readme.md page for this lab should be edited to include the 
 
 ## Lab Overview
 **NAMES OF COLLABORATORS HERE**
+[Amanda Lu](https://github.com/amandazlu/Interactive-Lab-Hub/tree/Fall2025/Lab%204), [Shreya Kethi Reddy](https://github.com/littleredpolkadot/Interactive-Lab-Hub/tree/Fall2025/Lab%204)
 
 
 For lab this week, we focus both on sensing, to bring in new modes of input into your devices, as well as prototyping the physical look and feel of the device. You will think about the physical form the device needs to perform the sensing as well as present the display or feedback about what was sensed. 
@@ -348,14 +349,48 @@ You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_Proxi
 
 Usually, sensors need to be positioned in specific locations or orientations to make them useful for their application. Now that you've tried a bunch of the sensors, pick one that you would like to use, and an application where you use the output of that sensor for an interaction. For example, you can use a distance sensor to measure someone's height if you position it overhead and get them to stand under it.
 
-GeistesBlitz 閃靈快手
+<!-- GeistesBlitz 閃靈快手 -->
 
 **\*\*\*Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful.\*\*\***
 
+![partc](images/part_c.png)
+
+- **Light Level Sensor**: can be used for plant monitoring. It senses and records the light levels for a sapling/plot. The sensor is on a stick in order to have it be above the plant so that it doesn't cast shadows on the device.
+- **LED Lightbulb Control**: Shown used in a lamp, but can be anywhere. Uses the sensor to allow for touchless control of the light. Left/Right swipes to change colors, Up/Down swipes to control brightness, Distance to turn on or off, and color sensor to match color of the light displayed.
+- **Pen Color Detector**: Sensor is mounted on the end of a pen device and detects colors. There are prongs on the sides of the sensor to ensure there is enough distance to sense the color, and lights to get the most accurate reading. Potential use case is with children: could be paired with a book and plays songs based on colors the pen is placed on.
+- **Smart Shelf**: Multiple sensors are used and mounted on the top of the shelf in order to detect if an object is present or has been removed. It can play an alert if essential items are missing.
+- **Smart Glasses Controller**: A use case for gesture control is when you cannot see the controller and find the buttons to press. Therefore, smart glasses are a good place for this since you are unable to see the sides when the glasses are being worn.
+
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
-**\*\*\*Pick one of these designs to prototype.\*\*\***
+<details>
+<summary>Answer instruction</summary>
 
+- How much can we stretch the capabilities of the sensor?
+	- Ex: how far can it sense distance and does it work comfortably/reasonably for the user
+- What's a good size to make the device and can the sensor fit on it
+	- Ex: for the LED lightbulb, is the sensor too small for big gestures
+ 	- Ex: for the Pen color detector, is the sensor too large to reasonably fit on the tip of a pen-shaped device 
+---
+</details>
+
+* Light Level Sensor: 
+	* What height/angle above the plant gives stable readings -> Stick-mounted sensor with adjustable height (10–40 cm)
+* LED Lightbulb Control:
+	* Distance on/off threshold that feels natural ->  Tests with controlled swipe distances (5/10/15 cm)
+* Pen Color Detector:
+	* Can the sensor + LEDs + standoffs fit at a pen tip without blocking view?
+* Smart Shelf:
+	* Material dependence: does glass, plastic, or fabric trigger reliably? -> YES!! Copper tape 
+	* Can it distinguish one big object vs. two small ones?
+	* False alarms from slight changes
+* Smart Glasses Controller:
+	* On-face noise: hair, cheeks, and motion while walking might cause triggers
+
+**\*\*\*Pick one of these designs to prototype.\*\*\***
+- We chose the smart shelf design since it has the most potential for different designs and usages
+- However, since this device would require multiple distance sensors, we experimented with potentially using a capacitive sensor instead since it would only need one.
+	- Additionally, the capacitive sensor wouldn't need to be above objects on the shelf like the distance sensor, removing the need for a roof.  
 
 ### Part D
 ### Physical considerations for displaying information and housing parts
