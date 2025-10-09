@@ -395,7 +395,7 @@ Usually, sensors need to be positioned in specific locations or orientations to 
 ### Part D
 ### Physical considerations for displaying information and housing parts
 
-
+<details>
 
 Here is a Pi with a paper faceplate on it to turn it into a display interface:
 
@@ -433,19 +433,38 @@ Here is an example:
 
 Think about how you want to present the information about what your sensor is sensing! Design a paper display for your project that communicates the state of the Pi and a sensor. Ideally you should design it so that you can slide the Pi out to work on the circuit or programming, and then slide it back in and reattach a few wires to be back in operation.
  
+ </details>
+
 **\*\*\*Sketch 5 designs for how you would physically position your display and any buttons or knobs needed to interact with it.\*\*\***
+
+![design_a](images/design_amd.png)
+![design_yyc](images/design_yyc.JPG)
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
+* How big should the openings be for comfortable usage?
+	* For the smaller shelves with enclosed spaces, users need to be able to grab things with ease. We can experiment with different size openings in the physical prototpye
+* What height is the shelf mounted at? Or is it on the floor?
+	* We need to make sure users can see what is on the shelf while being able to reach it comfortably
+* How complex should the design be? Is an overcomplicated shelf too overwhelming?
+
+
 **\*\*\*Pick one of these display designs to integrate into your prototype.\*\*\***
+
+We chose to implement the **medicine cabinet** display
+
 
 **\*\*\*Explain the rationale for the design.\*\*\*** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
 
 Build a cardboard prototype of your design.
 
+* We chose the encloseed form so that we can experiment with both types of sensors and see which would work better (either mounted on the top or strips of copper on the bottom)
+* The size also needs to fit medicine bottles of varying sizes, but not be too big to take up too much space
+* We made sure to leave room to house the raspberry pi and required electronics
 
 **\*\*\*Document your rough prototype.\*\*\***
-
+![P1](images/prototye1.png)
+![P1](images/prototype2.png)
 
 # LAB PART 2
 
