@@ -374,17 +374,17 @@ Usually, sensors need to be positioned in specific locations or orientations to 
 ---
 </details>
 
-* Light Level Sensor: 
+* **Light Level Sensor:** 
 	* What height/angle above the plant gives stable readings -> Stick-mounted sensor with adjustable height (10–40 cm)
-* LED Lightbulb Control:
+* **LED Lightbulb Control:**
 	* Distance on/off threshold that feels natural ->  Tests with controlled swipe distances (5/10/15 cm)
-* Pen Color Detector:
+* **Pen Color Detector:**
 	* Can the sensor + LEDs + standoffs fit at a pen tip without blocking view?
-* Smart Shelf:
+* **Smart Shelf:**
 	* Material dependence: does glass, plastic, or fabric trigger reliably? -> YES!! Copper tape 
 	* Can it distinguish one big object vs. two small ones?
 	* False alarms from slight changes
-* Smart Glasses Controller:
+* **Smart Glasses Controller:**
 	* On-face noise: hair, cheeks, and motion while walking might cause triggers
 
 **\*\*\*Pick one of these designs to prototype.\*\*\***
@@ -447,7 +447,11 @@ Think about how you want to present the information about what your sensor is se
 * What height is the shelf mounted at? Or is it on the floor?
 	* We need to make sure users can see what is on the shelf while being able to reach it comfortably
 * How complex should the design be? Is an overcomplicated shelf too overwhelming?
+* Is there any way to address the issue of false triggers?
 
+
+* Some design scenarios, like the parking lot, are too large to prototype in practice.
+* We don’t have components such as pressure sensors, some concepts might not be feasible to implement.
 
 **\*\*\*Pick one of these display designs to integrate into your prototype.\*\*\***
 
