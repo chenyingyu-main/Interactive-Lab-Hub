@@ -439,7 +439,7 @@ Think about how you want to present the information about what your sensor is se
 
 ![design_a](images/design_amd.png)
 ![design_yyc](images/design_yyc.JPG)
-
+![design_shy](images/design_shy.jpg)
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
 * How big should the openings be for comfortable usage?
@@ -469,6 +469,18 @@ Build a cardboard prototype of your design.
 **\*\*\*Document your rough prototype.\*\*\***
 ![P1](images/prototye1.png)
 ![P1](images/prototype2.png)
+
+
+**＊ Wizarding Video**
+
+We use a distance sensor and a display screen to demonstrate the functionality.
+
+🎥 See the testing video below.
+> [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/9FVgsd9ga6w/0.jpg)](https://youtu.be/9FVgsd9ga6w)
+
+
+For the design of the project, when a user takes out a pill or bottle, the screen will display the time the pill was taken. However, for the wizarding phase, we implemented a simpler version — the screen lights up in color when an object is taken.
+The remaining functions will be completed in Part 2.
 
 # LAB PART 2
 
