@@ -367,28 +367,73 @@ Following exploration and reflection from Part 1, complete the "looks like," "wo
 
 #### Chaining Devices and Exploring Interaction Effects
 
-For Part 2, you will design and build a fun interactive prototype using multiple inputs and outputs. This means chaining Qwiic and STEMMA QT devices (e.g., buttons, encoders, sensors, servos, displays) and/or combining with traditional breadboard prototyping (e.g., LEDs, buzzers, etc.).
+**🔁 Prototype Iteration**
 
-**Your prototype should:**
-- Combine at least two different types of input and output devices, inspired by your physical considerations from Part 1.
-- Be playful, creative, and demonstrate multi-input/multi-output interaction.
+>We made some adjustments to the look and logic of our prototype.
+>
+>Previously, our idea was to divide the schedule into morning, noon, and night, and record the time of each intake.
+>
+>However, we realized that in real use, the intervals between different medicines vary — so the system should be organized **by medicine**, not by time period.
+>Therefore, we redesigned the interaction so that the display screen shows and reminds the user of the next intake time for each specific pill.
+>
+>The updated prototype design is shown in the figure below.
+![design1](images/interat1.jpg)
 
-**Document your system with:**
-- Code for your multi-device demo
-- Photos and/or video of the working prototype in action
-- A simple interaction diagram or sketch showing how inputs and outputs are connected and interact
-- Written reflection: What did you learn about multi-input/multi-output interaction? What was fun, surprising, or challenging?
+---
+**Combined with Multi-Device**
+
+>Next, we added some interactive features to the new design.
+>A **rotator (rotary encoder)** was introduced to switch the text on the display — similar to turning pages.
+>We also added a **sound output** to remind the user when it’s time to take their medicine.
+>
+>Please see the following figure and description for details.
+![iterate2](images/iterate2.jpg)
+
+**💊 Medical Cabinet Sensors — I/O Device Overview:**
+* **Light/Proximity Sensor (Input Components)** => knows if the users have taken the medicine or not (records the last time taken) and if time will identify the pill based on the color.
+* **Rotator/ Rotary Encoder (Input Components)** => Allows the user to switch between different OLED display sets.
+* **Speaker (Output Components)** => Announces a reminder when it’s past the scheduled time to take a pill.
+* **3 OLED Displays (Output Components)** => Display the following information for each pill (Pill name, next scheduled intake time, last intake time).
+
+**Interaction Diagram**
+![interaction](images/Interaction_diagram.jpeg)
+
+The connections between the sensor and I/O devices are shown in the figure below.
+![connection](images/connect_diagram.jpeg)
 
 **Questions to consider:**
 - What new types of interaction become possible when you combine two or more sensors or actuators?
-	- 
+	- Since our display screen is quite small, adding a rotary encoder allows us to “turn pages” and display more information within limited space.
+	- We used a distance sensor, but it can be interchangeable with a light/proximity sensor — which means it could also be used to detect the color of the pill bottle (though we didn’t implement that feature in the final version).
 - How does the physical arrangement of devices (e.g., where the encoder or sensor is placed) change the user experience?
-	- We thought about using different sensors to change what is shown on the displays (button vs gesture sensor). We decided on using a button since it is more intuitive and we could not find a good place to place the sensor where it would make sense for the user since we were having the sensor change all three screens at once. It was unintuitive to swipe on the right side to change the leftmost screen. Therefore, a button can be placed anywhere and used to change the display. 
+	- For the distance sensor, we placed it on the top of the cabinet, since putting it at the bottom could cause the pill bottles to tip over easily.
+	- The rotary encoder was positioned on the side of the cabinet, close to the display screen, making it more intuitive for the user to understand that it controls the display. This placement also allows the user to know the switch would vhange the information shown across all screens simultaneously.
+- What happens if you use one device to control or modulate another (e.g., encoder sets a threshold, sensor triggers an action)?
+	- We could potentially use another rotary encoder to adjust the threshold of the distance sensor, allowing the system to adapt to different bottle sizes as the cabinet’s compartments are adjusted. However, this feature was not implemented in our final version.
+- How does the system feel if you swap which device is "primary" and which is "secondary"?
+	- In our current design, the distance sensor acts as the primary device, since it directly detects user actions (whether the medicine is taken) and triggers system responses such as recording time or playing reminders.
+	- The rotary encoder functions as a secondary device, mainly used to switch the information shown on the display.
+	- Because the encoder doesn’t trigger the system’s core behavior, swapping their roles wouldn’t make much sense in our case — the interaction flow is centered around the sensor’s detection rather than the encoder’s control.
+
+<details><summary> Instructions for Part E </summary>
+
+For Part 2, you will design and build a fun interactive prototype using multiple inputs and outputs. This means chaining Qwiic and STEMMA QT devices (e.g., buttons, encoders, sensors, servos, displays) and/or combining with traditional breadboard prototyping (e.g., LEDs, buzzers, etc.).
+
+**Your prototype should:**
+- ✅ Combine at least two different types of input and output devices, inspired by your physical considerations from Part 1.
+- 👌 Be playful, creative, and demonstrate multi-input/multi-output interaction.
+
+**Document your system with:**
+- ✅ Code for your multi-device demo
+- Photos and/or video of the working prototype in action
+- ✅ A simple interaction diagram or sketch showing how inputs and outputs are connected and interact
+- Written reflection: What did you learn about multi-input/multi-output interaction? What was fun, surprising, or challenging?
+
+**✅ Questions to consider:**
+- What new types of interaction become possible when you combine two or more sensors or actuators?
+- How does the physical arrangement of devices (e.g., where the encoder or sensor is placed) change the user experience?
 - What happens if you use one device to control or modulate another (e.g., encoder sets a threshold, sensor triggers an action)?
 - How does the system feel if you swap which device is "primary" and which is "secondary"?
-- 
-**PROBLEM**
-  - We originally wanted to use multiple APDS9960 sensors but it seems like we cannot change the address on it. 
 
 Try chaining different combinations and document what you discover!
 
@@ -396,7 +441,13 @@ See encoder_accel_servo_dashboard.py in the Lab 4 folder for an example of chain
 
 **`Lab 4/encoder_accel_servo_dashboard.py`**
 
+</details>
+
+---
+
 #### Using Multiple Qwiic Buttons: Changing I2C Address (Physically & Digitally)
+
+<details>
 
 If you want to use more than one Qwiic Button in your project, you must give each button a unique I2C address. There are two ways to do this:
 
@@ -476,8 +527,11 @@ For more details, see the [Qwiic Button Hookup Guide](https://learn.sparkfun.com
 
 ---
 
-### PCF8574 GPIO Expander: Add More Pins Over I²C
+</details>
 
+
+#### PCF8574 GPIO Expander: Add More Pins Over I²C
+<details>
 Sometimes your Pi’s header GPIO pins are already full (e.g., with a display or HAT). That’s where an I²C GPIO expander comes in handy.
 
 We use the Adafruit PCF8574 I²C GPIO Expander, which gives you 8 extra digital pins over I²C. It’s a great way to prototype with LEDs, buttons, or other components on the breadboard without worrying about pin conflicts—similar to how Arduino users often expand their pinouts when prototyping physical interactions.
@@ -508,7 +562,14 @@ This is a playful way to visualize how the expander works, but the same techniqu
 
 ---
 
-### Servo Control with SparkFun Servo pHAT
+</details>
+
+
+
+#### Servo Control with SparkFun Servo pHAT
+
+<details>
+
 For this lab, you will use the **SparkFun Servo pHAT** to control a micro servo (such as the Miuzei MS18 or similar 9g servo). The Servo pHAT stacks directly on top of the Adafruit Mini PiTFT (135×240) display without pin conflicts:
 - The Mini PiTFT uses SPI (GPIO22, 23, 24, 25) for display and buttons ([SPI pinout](https://pinout.xyz/pinout/spi)).
 - The Servo pHAT uses I²C (GPIO2 & 3) for the PCA9685 servo driver ([I2C pinout](https://pinout.xyz/pinout/i2c)).
@@ -531,13 +592,26 @@ A servo motor is a rotary actuator that allows for precise control of angular po
 
 ---
 
+</details>
 
 ### Part F
 
 ### Record
+**The design iteration is in Part E.**
+For this section, we will show photos of our final prototype, the testing video, and the interaction video with the device, along with the feedback we receive :)
+
+[put the photos here]
+[put the videos here]
+[feedback we get from interacting with the device]
+[something we learned, example: how do we use multiple display? why we still can't use three distance sensor]
+
+
+<details><summary>Instructions for Part F</summary>
 
 Document all the prototypes and iterations you have designed and worked on! Again, deliverables for this lab are writings, sketches, photos, and videos that show what your prototype:
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
 * "Works like": shows what the device can do
 * "Acts like": shows how a person would interact with the device
+
+</details>
 
