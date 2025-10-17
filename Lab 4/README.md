@@ -492,17 +492,45 @@ Following exploration and reflection from Part 1, complete the "looks like," "wo
 
 #### Chaining Devices and Exploring Interaction Effects
 
+**🔁 Prototype Iteration**
+
+We made some adjustments to the look and logic of our prototype.
+
+Previously, our idea was to divide the schedule into morning, noon, and night, and record the time of each intake.
+
+However, we realized that in real use, the intervals between different medicines vary — so the system should be organized **by medicine**, not by time period.
+Therefore, we redesigned the interaction so that the display screen shows and reminds the user of the next intake time for each specific pill.
+
+The updated prototype design is shown in the figure below.
+![design1](images/interat1.jpg)
+
+---
+**Combined with Multi-Device**
+
+Next, we added some interactive features to the new design.
+A **rotator (rotary encoder)** was introduced to switch the text on the display — similar to turning pages.
+We also added a **sound output** to remind the user when it’s time to take their medicine.
+Please see the following figure and description for details.
+
+![iterate2](images/iterate2.jpg)
+
 **💊 Medical Cabinet Sensors — I/O Device Overview:**
 * **Light/Proximity Sensor (Input Components)** => knows if the users have taken the medicine or not (records the last time taken) and if time will identify the pill based on the color.
 * **Rotator/ Rotary Encoder (Input Components)** => Allows the user to switch between different OLED display sets.
 * **Speaker (Output Components)** => Announces a reminder when it’s past the scheduled time to take a pill.
-* **3 OLED Displays (Output Components)** => Display the following information for each pill (Pill name, next scheduled intake time, time remaining until the next dose).
+* **3 OLED Displays (Output Components)** => Display the following information for each pill (Pill name, next scheduled intake time, last intake time).
 
 **Interaction Diagram**
 ![interaction](images/Interaction_diagram.jpeg)
 
 The connections between the sensor and I/O devices are shown in the figure below.
 ![connection](images/connect_diagram.jpeg)
+
+**Questions to consider:**
+- What new types of interaction become possible when you combine two or more sensors or actuators?
+- How does the physical arrangement of devices (e.g., where the encoder or sensor is placed) change the user experience?
+- What happens if you use one device to control or modulate another (e.g., encoder sets a threshold, sensor triggers an action)?
+- How does the system feel if you swap which device is "primary" and which is "secondary"?
 
 <details><summary> Instructions </summary>
 
@@ -691,16 +719,20 @@ A servo motor is a rotary actuator that allows for precise control of angular po
 ### Part F
 
 ### Record
+**The design iteration is in Part E.**
+For this section, we will show photos of our final prototype, the testing video, and the interaction video with the device, along with the feedback we receive.
+
+
+[put the videos here]
+[feedback we get from interacting with the device]
+[something we learned, example: how do we use multiple display? why we still can't use three distance sensor]
+
+
+<details><summary>Instructions</summary>
 
 Document all the prototypes and iterations you have designed and worked on! Again, deliverables for this lab are writings, sketches, photos, and videos that show what your prototype:
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
 * "Works like": shows what the device can do
 * "Acts like": shows how a person would interact with the device
 
-> We mentioned in the PartE tnat we are using 3 OLED Display. However, there are some technical limitations in our lab.
-We found in the documentation that the OLED address cannot be changed, and when we tried to connect multiple mini PiTFTs in tandem, it failed.
->
->We don’t think it’s possible to have multiple screens without using a multiplexer… (though it’s also possible we did something wrong)
->
-> Therefore, for the demo, we only used a single OLED display to represent one cabinet slot as a proof of concept.
-
+</details>
