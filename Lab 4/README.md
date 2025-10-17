@@ -16,12 +16,12 @@
 	- Photos/videos of each sensor tested (light/proximity, rotary encoder, joystick, distance sensor)
 	- Code and terminal output for each sensor
 
-*️⃣ **C. Physical Sensing Design**
+✅*️⃣ **C. Physical Sensing Design**
 	- 5 sketches of different ways to use your chosen sensor
 	- Written reflection: questions raised, what to prototype
 	- Pick one design to prototype and explain why
 
-*️⃣ **D. Display & Housing**
+✅*️⃣ **D. Display & Housing**
 	- 5 sketches for display/button/knob positioning
 	- Written reflection: questions raised, what to prototype
 	- Pick one display design to integrate
