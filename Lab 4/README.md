@@ -564,7 +564,6 @@ See encoder_accel_servo_dashboard.py in the Lab 4 folder for an example of chain
 
 #### Using Multiple Qwiic Buttons: Changing I2C Address (Physically & Digitally)
 
-If you want to use more than one Qwiic Button in your project...(See Details)
 <details>
 
 If you want to use more than one Qwiic Button in your project, you must give each button a unique I2C address. There are two ways to do this:
@@ -649,10 +648,8 @@ For more details, see the [Qwiic Button Hookup Guide](https://learn.sparkfun.com
 
 
 #### PCF8574 GPIO Expander: Add More Pins Over I²C
-
-Sometimes your Pi’s header GPIO pins are already full (e.g., with a display or HAT). That’s where an I²C GPIO expander comes in handy.
-
 <details>
+Sometimes your Pi’s header GPIO pins are already full (e.g., with a display or HAT). That’s where an I²C GPIO expander comes in handy.
 
 We use the Adafruit PCF8574 I²C GPIO Expander, which gives you 8 extra digital pins over I²C. It’s a great way to prototype with LEDs, buttons, or other components on the breadboard without worrying about pin conflicts—similar to how Arduino users often expand their pinouts when prototyping physical interactions.
 
@@ -687,8 +684,6 @@ This is a playful way to visualize how the expander works, but the same techniqu
 
 
 #### Servo Control with SparkFun Servo pHAT
-
-See Details for the **SparkFun Servo pHAT**
 
 <details>
 
