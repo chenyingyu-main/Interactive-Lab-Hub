@@ -528,11 +528,19 @@ The connections between the sensor and I/O devices are shown in the figure below
 
 **Questions to consider:**
 - What new types of interaction become possible when you combine two or more sensors or actuators?
+	- Since our display screen is quite small, adding a rotary encoder allows us to “turn pages” and display more information within limited space.
+	- We used a distance sensor, but it can be interchangeable with a light/proximity sensor — which means it could also be used to detect the color of the pill bottle (though we didn’t implement that feature in the final version).
 - How does the physical arrangement of devices (e.g., where the encoder or sensor is placed) change the user experience?
+	- For the distance sensor, we placed it on the top of the cabinet, since putting it at the bottom could cause the pill bottles to tip over easily.
+	- The rotary encoder was positioned on the side of the cabinet, close to the display screen, making it more intuitive for the user to understand that it controls the display. This placement also allows the user to know the switch would vhange the information shown across all screens simultaneously.
 - What happens if you use one device to control or modulate another (e.g., encoder sets a threshold, sensor triggers an action)?
+	- We could potentially use another rotary encoder to adjust the threshold of the distance sensor, allowing the system to adapt to different bottle sizes as the cabinet’s compartments are adjusted. However, this feature was not implemented in our final version.
 - How does the system feel if you swap which device is "primary" and which is "secondary"?
+	- In our current design, the distance sensor acts as the primary device, since it directly detects user actions (whether the medicine is taken) and triggers system responses such as recording time or playing reminders.
+	- The rotary encoder functions as a secondary device, mainly used to switch the information shown on the display.
+	- Because the encoder doesn’t trigger the system’s core behavior, swapping their roles wouldn’t make much sense in our case — the interaction flow is centered around the sensor’s detection rather than the encoder’s control.
 
-<details><summary> Instructions </summary>
+<details><summary> Instructions for Part E </summary>
 
 For Part 2, you will design and build a fun interactive prototype using multiple inputs and outputs. This means chaining Qwiic and STEMMA QT devices (e.g., buttons, encoders, sensors, servos, displays) and/or combining with traditional breadboard prototyping (e.g., LEDs, buzzers, etc.).
 
@@ -546,7 +554,7 @@ For Part 2, you will design and build a fun interactive prototype using multiple
 - ✅ A simple interaction diagram or sketch showing how inputs and outputs are connected and interact
 - Written reflection: What did you learn about multi-input/multi-output interaction? What was fun, surprising, or challenging?
 
-**Questions to consider:**
+**✅ Questions to consider:**
 - What new types of interaction become possible when you combine two or more sensors or actuators?
 - How does the physical arrangement of devices (e.g., where the encoder or sensor is placed) change the user experience?
 - What happens if you use one device to control or modulate another (e.g., encoder sets a threshold, sensor triggers an action)?
@@ -715,15 +723,15 @@ A servo motor is a rotary actuator that allows for precise control of angular po
 
 ### Record
 **The design iteration is in Part E.**
-For this section, we will show photos of our final prototype, the testing video, and the interaction video with the device, along with the feedback we receive.
+For this section, we will show photos of our final prototype, the testing video, and the interaction video with the device, along with the feedback we receive :)
 
-
+[put the photos here]
 [put the videos here]
 [feedback we get from interacting with the device]
 [something we learned, example: how do we use multiple display? why we still can't use three distance sensor]
 
 
-<details><summary>Instructions</summary>
+<details><summary>Instructions for Part F</summary>
 
 Document all the prototypes and iterations you have designed and worked on! Again, deliverables for this lab are writings, sketches, photos, and videos that show what your prototype:
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
