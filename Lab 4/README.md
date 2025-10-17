@@ -494,24 +494,24 @@ Following exploration and reflection from Part 1, complete the "looks like," "wo
 
 **🔁 Prototype Iteration**
 
-We made some adjustments to the look and logic of our prototype.
-
-Previously, our idea was to divide the schedule into morning, noon, and night, and record the time of each intake.
-
-However, we realized that in real use, the intervals between different medicines vary — so the system should be organized **by medicine**, not by time period.
-Therefore, we redesigned the interaction so that the display screen shows and reminds the user of the next intake time for each specific pill.
-
-The updated prototype design is shown in the figure below.
+>We made some adjustments to the look and logic of our prototype.
+>
+>Previously, our idea was to divide the schedule into morning, noon, and night, and record the time of each intake.
+>
+>However, we realized that in real use, the intervals between different medicines vary — so the system should be organized **by medicine**, not by time period.
+>Therefore, we redesigned the interaction so that the display screen shows and reminds the user of the next intake time for each specific pill.
+>
+>The updated prototype design is shown in the figure below.
 ![design1](images/interat1.jpg)
 
 ---
 **Combined with Multi-Device**
 
-Next, we added some interactive features to the new design.
-A **rotator (rotary encoder)** was introduced to switch the text on the display — similar to turning pages.
-We also added a **sound output** to remind the user when it’s time to take their medicine.
-Please see the following figure and description for details.
-
+>Next, we added some interactive features to the new design.
+>A **rotator (rotary encoder)** was introduced to switch the text on the display — similar to turning pages.
+>We also added a **sound output** to remind the user when it’s time to take their medicine.
+>
+>Please see the following figure and description for details.
 ![iterate2](images/iterate2.jpg)
 
 **💊 Medical Cabinet Sensors — I/O Device Overview:**
