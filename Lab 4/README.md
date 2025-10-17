@@ -484,26 +484,38 @@ The remaining functions will be completed in Part 2.
 
 # LAB PART 2
 
-### Part 2
+<!-- ### Part 2 -->
 
 Following exploration and reflection from Part 1, complete the "looks like," "works like" and "acts like" prototypes for your design, reiterated below.
-
-
 
 ### Part E
 
 #### Chaining Devices and Exploring Interaction Effects
 
+**💊 Medical Cabinet Sensors — I/O Device Overview:**
+* **Light/Proximity Sensor (Input Components)** => knows if the users have taken the medicine or not (records the last time taken) and if time will identify the pill based on the color.
+* **Rotator/ Rotary Encoder (Input Components)** => Allows the user to switch between different OLED display sets.
+* **Speaker (Output Components)** => Announces a reminder when it’s past the scheduled time to take a pill.
+* **3 OLED Displays (Output Components)** => Display the following information for each pill (Pill name, next scheduled intake time, time remaining until the next dose).
+
+**Interaction Diagram**
+![interaction](images/Interaction_diagram.jpeg)
+
+The connections between the sensor and I/O devices are shown in the figure below.
+![connection](images/connect_diagram.jpeg)
+
+<details><summary> Instructions </summary>
+
 For Part 2, you will design and build a fun interactive prototype using multiple inputs and outputs. This means chaining Qwiic and STEMMA QT devices (e.g., buttons, encoders, sensors, servos, displays) and/or combining with traditional breadboard prototyping (e.g., LEDs, buzzers, etc.).
 
 **Your prototype should:**
-- Combine at least two different types of input and output devices, inspired by your physical considerations from Part 1.
-- Be playful, creative, and demonstrate multi-input/multi-output interaction.
+- ✅ Combine at least two different types of input and output devices, inspired by your physical considerations from Part 1.
+- 👌 Be playful, creative, and demonstrate multi-input/multi-output interaction.
 
 **Document your system with:**
-- Code for your multi-device demo
+- ✅ Code for your multi-device demo
 - Photos and/or video of the working prototype in action
-- A simple interaction diagram or sketch showing how inputs and outputs are connected and interact
+- ✅ A simple interaction diagram or sketch showing how inputs and outputs are connected and interact
 - Written reflection: What did you learn about multi-input/multi-output interaction? What was fun, surprising, or challenging?
 
 **Questions to consider:**
@@ -518,7 +530,14 @@ See encoder_accel_servo_dashboard.py in the Lab 4 folder for an example of chain
 
 **`Lab 4/encoder_accel_servo_dashboard.py`**
 
+</details>
+
+---
+
 #### Using Multiple Qwiic Buttons: Changing I2C Address (Physically & Digitally)
+
+If you want to use more than one Qwiic Button in your project...(See Details)
+<details>
 
 If you want to use more than one Qwiic Button in your project, you must give each button a unique I2C address. There are two ways to do this:
 
@@ -598,9 +617,14 @@ For more details, see the [Qwiic Button Hookup Guide](https://learn.sparkfun.com
 
 ---
 
-### PCF8574 GPIO Expander: Add More Pins Over I²C
+</details>
+
+
+#### PCF8574 GPIO Expander: Add More Pins Over I²C
 
 Sometimes your Pi’s header GPIO pins are already full (e.g., with a display or HAT). That’s where an I²C GPIO expander comes in handy.
+
+<details>
 
 We use the Adafruit PCF8574 I²C GPIO Expander, which gives you 8 extra digital pins over I²C. It’s a great way to prototype with LEDs, buttons, or other components on the breadboard without worrying about pin conflicts—similar to how Arduino users often expand their pinouts when prototyping physical interactions.
 
@@ -630,7 +654,16 @@ This is a playful way to visualize how the expander works, but the same techniqu
 
 ---
 
-### Servo Control with SparkFun Servo pHAT
+</details>
+
+
+
+#### Servo Control with SparkFun Servo pHAT
+
+See Details for the **SparkFun Servo pHAT**
+
+<details>
+
 For this lab, you will use the **SparkFun Servo pHAT** to control a micro servo (such as the Miuzei MS18 or similar 9g servo). The Servo pHAT stacks directly on top of the Adafruit Mini PiTFT (135×240) display without pin conflicts:
 - The Mini PiTFT uses SPI (GPIO22, 23, 24, 25) for display and buttons ([SPI pinout](https://pinout.xyz/pinout/spi)).
 - The Servo pHAT uses I²C (GPIO2 & 3) for the PCA9685 servo driver ([I2C pinout](https://pinout.xyz/pinout/i2c)).
@@ -653,6 +686,7 @@ A servo motor is a rotary actuator that allows for precise control of angular po
 
 ---
 
+</details>
 
 ### Part F
 
@@ -662,4 +696,11 @@ Document all the prototypes and iterations you have designed and worked on! Agai
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
 * "Works like": shows what the device can do
 * "Acts like": shows how a person would interact with the device
+
+> We mentioned in the PartE tnat we are using 3 OLED Display. However, there are some technical limitations in our lab.
+We found in the documentation that the OLED address cannot be changed, and when we tried to connect multiple mini PiTFTs in tandem, it failed.
+>
+>We don’t think it’s possible to have multiple screens without using a multiplexer… (though it’s also possible we did something wrong)
+>
+> Therefore, for the demo, we only used a single OLED display to represent one cabinet slot as a proof of concept.
 
