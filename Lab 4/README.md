@@ -726,8 +726,12 @@ A servo motor is a rotary actuator that allows for precise control of angular po
 For this section, we will show photos of our final prototype, the testing video, and the interaction video with the device, along with the feedback we receive :)
 
 [put the photos here]
-[put the videos here]
+
+ 🎥 Watch the video demo for the **Medicine Cabinet** below.
+> [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/LHmUcn-DoOg/0.jpg)](https://youtu.be/LHmUcn-DoOg)
+
 [feedback we get from interacting with the device]
+
 [something we learned, example: how do we use multiple display? why we still can't use three distance sensor]
 
 
