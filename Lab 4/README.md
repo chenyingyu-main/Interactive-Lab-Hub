@@ -748,7 +748,7 @@ For this section, we will show photos of our final prototype, the testing video,
 >
 > [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/qEu0_KRe0Cs/0.jpg)](https://youtu.be/qEu0_KRe0Cs)
 
-**Feedback We Recieved**
+**💬 Feedback We Recieved**
 > Special thanks: Jacey Hu (not an IDD student)
 * Suggested adding **a small LED light** to indicate which medicine should be taken, since it’s not obvious which one to pick up.
 * Mentioned that the speaker sound is a bit scary — it might make users **feel pressured** when taking medicine, and the sound isn’t very clear.
