@@ -725,15 +725,27 @@ A servo motor is a rotary actuator that allows for precise control of angular po
 **The design iteration is in Part E.**
 For this section, we will show photos of our final prototype, the testing video, and the interaction video with the device, along with the feedback we receive :)
 
-[put the photos here]
+**TODO List**
+1. briefly explain the code (Part E or Part F) or at least where the code is.
+2. put the photos of our final device
+3. ✅ videos
+4. ✅ feedback we get from interacting with the device
+5. something we learned, example: how do we use multiple display? why we still can't use three distance sensor
 
- 🎥 Watch the video demo for the **Medicine Cabinet** below.
+
+**Videos for Madicine Cabinet**
+
+> 🎥 Watch the video demo for the **Medicine Cabinet** below.
 > [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/LHmUcn-DoOg/0.jpg)](https://youtu.be/LHmUcn-DoOg)
 
-[feedback we get from interacting with the device]
+> 🎥 Watch the **Interaction Video** for the **Medicine Cabinet** below.
+> [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/qEu0_KRe0Cs/0.jpg)](https://youtu.be/qEu0_KRe0Cs)
 
-[something we learned, example: how do we use multiple display? why we still can't use three distance sensor]
-
+**Feedback We Recieved**
+> Special thanks: Jacey Hu (not an IDD student)
+* Suggested adding **a small LED light** to indicate which medicine should be taken, since it’s not obvious which one to pick up.
+* Mentioned that the speaker sound is a bit scary — it might make users **feel pressured** when taking medicine, and the sound isn’t very clear.
+* Noted that the cabinet structure seems **unstable**; if it’s bumped, the bottles might tip over and cause the recorded time to become inaccurate.
 
 <details><summary>Instructions for Part F</summary>
 
