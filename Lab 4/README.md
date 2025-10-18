@@ -33,12 +33,12 @@
 ### Part 2 (Week 2)
 **Submit the following for Part 2:**  
 *️⃣ **E. Multi-Device Demo**
-	- Code and video for your multi-input multi-output demo (e.g., chaining Qwiic buttons, servo, GPIO expander, etc.)
-	- Reflection on interaction effects and chaining
+	- ✅ Code and video for your multi-input multi-output demo (e.g., chaining Qwiic buttons, servo, GPIO expander, etc.)
+	- ✅ Reflection on interaction effects and chaining
 
 *️⃣ **F. Final Documentation**
-	- Photos/videos of your final prototype
-	- Written summary: what it looks like, works like, acts like
+	- ✅ Photos/videos of your final prototype
+	- ✅ Written summary: what it looks like, works like, acts like
 	- Reflection on what you learned and next steps
 
 ---
@@ -550,9 +550,9 @@ For Part 2, you will design and build a fun interactive prototype using multiple
 
 **Document your system with:**
 - ✅ Code for your multi-device demo
-- Photos and/or video of the working prototype in action
+- ✅ Photos and/or video of the working prototype in action
 - ✅ A simple interaction diagram or sketch showing how inputs and outputs are connected and interact
-- Written reflection: What did you learn about multi-input/multi-output interaction? What was fun, surprising, or challenging?
+- ✅ Written reflection: What did you learn about multi-input/multi-output interaction? What was fun, surprising, or challenging?
 
 **✅ Questions to consider:**
 - What new types of interaction become possible when you combine two or more sensors or actuators?
@@ -726,12 +726,17 @@ A servo motor is a rotary actuator that allows for precise control of angular po
 For this section, we will show photos of our final prototype, the testing video, and the interaction video with the device, along with the feedback we receive :)
 
 **TODO List**
-1. briefly explain the code (Part E or Part F) or at least where the code is.
+1. briefly explain the code (not sure if we shuld put it in Part E or Part F) or at least where the code is.
+2. ✅ Written summary: what it looks like, works like, acts like
 2. put the photos of our final device
 3. ✅ videos
 4. ✅ feedback we get from interacting with the device
 5. something we learned, example: how do we use multiple display? why we still can't use three distance sensor
 
+**Written summary: what it *looks like, works like, acts like***
+> * **"Looks like":** It looks like **a small shelf** rather than a traditional bathroom-style medicine cabinet. A rotary encoder knob is placed on the side, and the whole device is designed to **sit on a desk or tabletop**. In terms of weight, it’s roughly around 800 grams (about 1.8 pounds) — a small cardboard box containing a Raspberry Pi, a few sensors, and a mini speaker. 
+> * **"Works like":** The core function is detecting when a pill is taken, displaying the next intake time, and playing a sound reminder through the speaker. So basically, it can **show the time and remind the user to take their medicine**.
+> * **"Acts like":** The user can turn the encoder to **view the pill name, the last intake time, and the next scheduled time**. When it’s time to take the medicine, the speaker **plays a reminder sound**. Once the user picks up the medicine, the sensor detects the change in distance and **records the latest intake time**, continuing the loop.
 
 **Videos for Madicine Cabinet**
 
