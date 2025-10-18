@@ -736,9 +736,11 @@ For this section, we will show photos of our final prototype, the testing video,
 **Videos for Madicine Cabinet**
 
 > 🎥 Watch the video demo for the **Medicine Cabinet** below.
+>
 > [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/LHmUcn-DoOg/0.jpg)](https://youtu.be/LHmUcn-DoOg)
 
 > 🎥 Watch the **Interaction Video** for the **Medicine Cabinet** below.
+>
 > [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/qEu0_KRe0Cs/0.jpg)](https://youtu.be/qEu0_KRe0Cs)
 
 **Feedback We Recieved**
