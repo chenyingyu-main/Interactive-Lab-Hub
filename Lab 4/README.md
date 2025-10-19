@@ -734,6 +734,7 @@ A servo motor is a rotary actuator that allows for precise control of angular po
 **The design iteration is in Part E.**
 For this section, we will show photos of our final prototype, the testing video, and the interaction video with the device, along with the feedback we receive :)
 
+
 <!-- 
 **TODO List**
 1. ✅ briefly explain the code (not sure if we shuld put it in Part E or Part F) or at least where the code is.
@@ -743,6 +744,8 @@ For this section, we will show photos of our final prototype, the testing video,
 4. ✅ feedback we get from interacting with the device
 5. ✅ something we learned, example: how do we use multiple display? why we still can't use three distance sensor 
 -->
+
+
 
 **Code Overview**
 > The code for our device is located in [main_file.py](/Lab%204/main_file.py)
