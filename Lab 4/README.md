@@ -548,7 +548,7 @@ The connections between the sensor and I/O devices are shown in the figure below
 	- Because the encoder doesn’t trigger the system’s core behavior, swapping their roles wouldn’t make much sense in our case — the interaction flow is centered around the sensor’s detection rather than the encoder’s control.
 	- Swapping the device would change the main the functionality of our system from a detection system to more of an information display system.
 
-	
+
 <details><summary> Instructions for Part E </summary>
 
 For Part 2, you will design and build a fun interactive prototype using multiple inputs and outputs. This means chaining Qwiic and STEMMA QT devices (e.g., buttons, encoders, sensors, servos, displays) and/or combining with traditional breadboard prototyping (e.g., LEDs, buzzers, etc.).
@@ -769,9 +769,9 @@ For this section, we will show photos of our final prototype, the testing video,
 
 
 **Written summary: what it *looks like, works like, acts like***
-> * **"Looks like":** It looks like **a small shelf** rather than a traditional bathroom-style medicine cabinet. A rotary encoder knob is placed on the side, and the whole device is designed to **sit on a desk or tabletop**. In terms of weight, it’s roughly around 800 grams (about 1.8 pounds) — a small cardboard box containing a Raspberry Pi, a few sensors, and a mini speaker. 
-> * **"Works like":** The core function is detecting when a pill is taken, displaying the next intake time, and playing a sound reminder through the speaker. So basically, it can **show the time and remind the user to take their medicine**.
-> * **"Acts like":** The user can turn the encoder to **view the pill name, the last intake time, and the next scheduled time**. When it’s time to take the medicine, the speaker **plays a reminder sound**. Once the user picks up the medicine, the sensor detects the change in distance and **records the latest intake time**, continuing the loop.
+> * **"Looks like":** It looks like **a small shelf** rather than a traditional bathroom-style medicine cabinet. A rotary encoder knob is placed on the side, and the whole device is designed to **sit on a desk or tabletop** or be **mounted to a wall**. In terms of weight, it’s roughly around 800 grams (about 1.8 pounds) — a small cardboard box containing a Raspberry Pi, a few sensors, and a mini speaker. It is meant to be a simple design that can be part of any home without being too intrusive. 
+> * **"Works like":** The core function is detecting when a pill is taken, displaying the next and last intake time, and playing a sound reminder through the speaker. So basically, it can **show the time and remind the user to take their medicine**. 
+> * **"Acts like":** The user can turn the encoder to **view the pill name, the last intake time, and the next scheduled time**. When it’s time to take the medicine, the speaker **plays a reminder sound**. Once the user picks up the medicine, the sensor detects the change in distance and **records the latest intake time**, continuing the loop. It is able to automatically keep track of when the user last took their pills to counter forgetfulness and taking too much/little medicine.
 
 **Photos of Medicine Cabinet**  
 
