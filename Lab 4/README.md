@@ -733,10 +733,40 @@ For this section, we will show photos of our final prototype, the testing video,
 4. ✅ feedback we get from interacting with the device
 5. something we learned, example: how do we use multiple display? why we still can't use three distance sensor
 
+**Code Overview**
+> The code for our device is located in [main_file.py](/Lab%204/main_file.py)
+> 
+> **Chaining Displays**
+> - Our biggest challenge was figuring out how to chain the OLED displays since it was essential for our device. This was difficult because there is no way of changing the address of the displays
+> - Through research, we found that a solution is to put each display on a separate bus so that they can be accessed separately, which required enabling software buses in addition to the original physical bus.
+> - We referenced ChatGPT to help troubleshoot how to accomplish this, and added these lines to the configuration file
+> ```
+> dtoverlay=i2c-gpio,bus=15,i2c_gpio_sda=26,i2c_gpio_scl=19
+> dtoverlay=i2c-gpio,bus=16,i2c_gpio_sda=20,i2c_gpio_scl=21
+> ```
+> - After wiring each screen to the correct gpio pins on the raspberry pi, we were able to control each screen separately
+>
+> **Displaying Text**
+> - Since we were using the smbus2 package to access screens on each different bus, we had to send the text to the screen in bytes rather than being able to just display an image using pillow.
+> - We once again queried ChatGPT to help us create a function for drawing text to the screen in 32-byte chunks
+>
+> **Chaining Sensors**
+> - The distance sensors we used only had 2 different possible addresses, which was a problem since we needed to have 3 for our prototype.
+> - We had the trouble with chaining the three distance sensors using the same method as the screens since the software buses had a fairly significant delay compared to the hardware bus. This wasn't a problem for the screens since the small delay only made the text appear a little later, and wasn't a big deal. However, for the sensors, it caused problems in the sensing capabilities.
+> - In the end, we only implemented sensing capability for one of the sensors while the rest were chained onto the same buses as their corresponding screen, but didn't function completely. The code for these sensors is commented out in our code file.
+> - One potential solution is to use a multiplexer and have them all connected to the physical bus, however, we did not have this part. 
+
+
 **Written summary: what it *looks like, works like, acts like***
 > * **"Looks like":** It looks like **a small shelf** rather than a traditional bathroom-style medicine cabinet. A rotary encoder knob is placed on the side, and the whole device is designed to **sit on a desk or tabletop**. In terms of weight, it’s roughly around 800 grams (about 1.8 pounds) — a small cardboard box containing a Raspberry Pi, a few sensors, and a mini speaker. 
 > * **"Works like":** The core function is detecting when a pill is taken, displaying the next intake time, and playing a sound reminder through the speaker. So basically, it can **show the time and remind the user to take their medicine**.
 > * **"Acts like":** The user can turn the encoder to **view the pill name, the last intake time, and the next scheduled time**. When it’s time to take the medicine, the speaker **plays a reminder sound**. Once the user picks up the medicine, the sensor detects the change in distance and **records the latest intake time**, continuing the loop.
+
+**Photos of Medicine Cabinet**  
+
+<img width="700" alt="cabinet-front" src="images/cabinet_front.jpg" /> 
+<img width="700" alt="cabinet-side" src="images/cabinet_side.jpg" /> 
+<img width="700" alt="cabinet-back" src="images/cabinet_back.jpg" /> 
 
 **Videos for Madicine Cabinet**
 
@@ -749,10 +779,20 @@ For this section, we will show photos of our final prototype, the testing video,
 > [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/qEu0_KRe0Cs/0.jpg)](https://youtu.be/qEu0_KRe0Cs)
 
 **💬 Feedback We Recieved**
-> Special thanks: Jacey Hu (not an IDD student)
+> Special thanks: Jacey Hu and Marianne Arriola (not IDD students)
 * Suggested adding **a small LED light** to indicate which medicine should be taken, since it’s not obvious which one to pick up.
 * Mentioned that the speaker sound is a bit scary — it might make users **feel pressured** when taking medicine, and the sound isn’t very clear.
 * Noted that the cabinet structure seems **unstable**; if it’s bumped, the bottles might tip over and cause the recorded time to become inaccurate.
+* Suggest that since taking medication at the wrong time can also be harmful, it would be helpful if the system had a way to warn the users not to take the medicine before the right time
+* Noted that it would be helpful to add the dosage and a way to check if the users had actually taken their pills and the right amount.
+* Pointed out that if a user puts the medication in the wrong spot, then they would be taking the wrong medication unknowingly and without thinking too much about it
+
+**Reflections**
+> - From the feedback we received, next steps could include adding the LED functionality to make the interaction more seamless and improving on the speaker quality
+> - In addition for more advanced functionality we could add speaker alerts for taking the medication too early, a weight sensor to detect the number of pills taken out of the bottle, as well as switch out the distance sensor for a light proximity sensor or a camera to detect if the right bottle has been placed in the right location.
+> - We could also figure out how to properly chain the distance sensors, either by using a multiplexer or finding a different method.
+> - Or alternatively, we could use a different sensor, such as the capacitive sensor which would be able to sense all three locations, or a different one that allows for address changing.
+> - Our biggest takeaway from this lab was learning different methods for how to chain different devices, such as through changing the address through hardware or software, using different buses, using a multiplexer, and more. 
 
 <details><summary>Instructions for Part F</summary>
 
