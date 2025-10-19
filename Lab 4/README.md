@@ -492,6 +492,12 @@ Following exploration and reflection from Part 1, complete the "looks like," "wo
 
 #### Chaining Devices and Exploring Interaction Effects
 
+**Feedback on Original Prototype**
+> Feedback from Thomas Knoepffler and others
+> - The purpose of the device was not originally clear, he believed it seemed like there should be drawers to be pulled out.
+> - The openings may be too small depending on the user.
+> - The labels of morning, noon, and night restricted the usage of the device.
+
 **🔁 Prototype Iteration**
 
 >We made some adjustments to the look and logic of our prototype.
@@ -527,19 +533,22 @@ The connections between the sensor and I/O devices are shown in the figure below
 ![connection](images/connect_diagram.jpeg)
 
 **Questions to consider:**
-- What new types of interaction become possible when you combine two or more sensors or actuators?
+- **What new types of interaction become possible when you combine two or more sensors or actuators?**
 	- Since our display screen is quite small, adding a rotary encoder allows us to “turn pages” and display more information within limited space.
 	- We used a distance sensor, but it can be interchangeable with a light/proximity sensor — which means it could also be used to detect the color of the pill bottle (though we didn’t implement that feature in the final version).
-- How does the physical arrangement of devices (e.g., where the encoder or sensor is placed) change the user experience?
+- **How does the physical arrangement of devices (e.g., where the encoder or sensor is placed) change the user experience?**
 	- For the distance sensor, we placed it on the top of the cabinet, since putting it at the bottom could cause the pill bottles to tip over easily.
-	- The rotary encoder was positioned on the side of the cabinet, close to the display screen, making it more intuitive for the user to understand that it controls the display. This placement also allows the user to know the switch would vhange the information shown across all screens simultaneously.
-- What happens if you use one device to control or modulate another (e.g., encoder sets a threshold, sensor triggers an action)?
+	- The rotary encoder was positioned on the side of the cabinet, close to the display screen, making it more intuitive for the user to understand that it controls the display. This placement also allows the user to know the switch would change the information shown across all screens simultaneously.
+  - We thought about using different sensors to change what is shown on the displays (button vs gesture sensor vs rotary encoder). We decided on using an encoder since it is more intuitive and we could not find a good place to place the sensor where it would make sense for the user since we were having the sensor change all three screens at once. It was unintuitive to swipe on the right side to change the leftmost screen  
+- **What happens if you use one device to control or modulate another (e.g., encoder sets a threshold, sensor triggers an action)?**
 	- We could potentially use another rotary encoder to adjust the threshold of the distance sensor, allowing the system to adapt to different bottle sizes as the cabinet’s compartments are adjusted. However, this feature was not implemented in our final version.
-- How does the system feel if you swap which device is "primary" and which is "secondary"?
+- **How does the system feel if you swap which device is "primary" and which is "secondary"?**
 	- In our current design, the distance sensor acts as the primary device, since it directly detects user actions (whether the medicine is taken) and triggers system responses such as recording time or playing reminders.
 	- The rotary encoder functions as a secondary device, mainly used to switch the information shown on the display.
 	- Because the encoder doesn’t trigger the system’s core behavior, swapping their roles wouldn’t make much sense in our case — the interaction flow is centered around the sensor’s detection rather than the encoder’s control.
+	- Swapping the device would change the main the functionality of our system from a detection system to more of an information display system.
 
+	
 <details><summary> Instructions for Part E </summary>
 
 For Part 2, you will design and build a fun interactive prototype using multiple inputs and outputs. This means chaining Qwiic and STEMMA QT devices (e.g., buttons, encoders, sensors, servos, displays) and/or combining with traditional breadboard prototyping (e.g., LEDs, buzzers, etc.).
@@ -725,13 +734,15 @@ A servo motor is a rotary actuator that allows for precise control of angular po
 **The design iteration is in Part E.**
 For this section, we will show photos of our final prototype, the testing video, and the interaction video with the device, along with the feedback we receive :)
 
+<!-- 
 **TODO List**
-1. briefly explain the code (not sure if we shuld put it in Part E or Part F) or at least where the code is.
+1. ✅ briefly explain the code (not sure if we shuld put it in Part E or Part F) or at least where the code is.
 2. ✅ Written summary: what it looks like, works like, acts like
-2. put the photos of our final device
+2. ✅ put the photos of our final device
 3. ✅ videos
 4. ✅ feedback we get from interacting with the device
-5. something we learned, example: how do we use multiple display? why we still can't use three distance sensor
+5. ✅ something we learned, example: how do we use multiple display? why we still can't use three distance sensor 
+-->
 
 **Code Overview**
 > The code for our device is located in [main_file.py](/Lab%204/main_file.py)
