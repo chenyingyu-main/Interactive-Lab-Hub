@@ -159,8 +159,32 @@ In an earlier version of this class students experimented with foundational comp
 * This can be as simple as the boat detector shown in lecture.
 * Try out different interaction outputs and inputs.
 
-
 **\*\*\*Describe and detail the interaction, as well as your experimentation here.\*\*\***
+
+**1️⃣ Idea and Interaction Intro:** 
+>We constructed a simple interaction using Raspberry Pi and **MediaPipe** to detect upper-body poses and map them to servo motor movements. The idea is to let a small robot (servo) **mimic the user’s arm motions in real-time**.
+>
+> We chose this interaction because it has the potential to be extended into many different applications. For example, it could be used for gesture control in games, full-body tracking for a small humanoid robot, or interactive experiences like mirroring challenges and “Just Dance”-style games.
+>
+> But still, in this lab, we are testing our idea :) We will cover arm detection and make the servo move.
+
+**2️⃣ Model / Mechanism:**
+> For part 1, we tried mapping one arm first to ensure the servo response for experiment.
+> 
+> Not yet for documentation.
+
+**3️⃣ Interaction Input & Output:**
+> * **Input:** Web Camera (Camera feed capturing user’s upper-body movement. (via MediaPipe Pose))
+> * **Output:** Servo motors (Motors move to mimic user’s arm gesture.)
+>
+> **Trying with different output:** We plan to keep the same servo motor but change the position of its attachment (servo horn). In setup (A), the servo rotates around its center, while in setup (B), it is mounted at the base and drives a link from one end of the attachment. 
+>
+> We will observe which setup is easier to implement and which one makes more sense.
+
+
+**4️⃣ Experiment and Findings:**
+
+
 
 ### Part C
 ### Test the interaction prototype
