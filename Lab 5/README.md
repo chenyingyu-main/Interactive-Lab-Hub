@@ -181,11 +181,12 @@ Include screenshots of your use of Teachable Machines, and write how you might u
 
 </details>
 
+
 <table>
 <tr>
-<td><img src="images/Teachable1.png" width="250"/></td>
-<td><img src="images/Teachable2.png" width="250"/></td>
-<td><img src="images/Teachable3.png" width="250"/></td>
+<td width="30%"><img src="images/Teachable1.png" width="100%"/></td>
+<td width="30%"><img src="images/Teachable2.png" width="100%"/></td>
+<td width="30%"><img src="images/Teachable3.png" width="100%"/></td>
 </tr>
 </table>
 
