@@ -272,9 +272,14 @@ For example:
 
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
+> At frst, users are likely not aware of the uncertainties of the system, such as it not working properly if their face or body parts are out of frame. However, since they can see the video and how their arm is being detected, they can quickly learn how to improve performance of the system by moving around until the model moves smoothly. 
 1. How bad would they be impacted by a miss classification?
+> A miss classification wouldn't be too terrible since it would only impact the model in the moment. The overall action would still show up fairly well. As long as there aren't too many miss classifications, the user would not be too affected. 
 1. How could change your interactive system to address this?
+> To improve the issues with uncertainties, we could try using a different pose recognition tool that doesn't require as much of the body to be in frame. Alternatively, when setting up the environment for the user, we could make a marker for where they need to stand so that the camera is able to capture their entire body without any potential for them going out of frame.
 1. Are there optimizations you can try to do on your sense-making algorithm.
+> A potential optimization we could try is to use a heavier version of MediaPipe to try and get more accuracy. However, it does not run as smoothly on our Raspberry Pi and has more delay in the video, so more fine tuning is required.
+
 
 ### Part D
 ### Characterize your own Observant system
@@ -282,12 +287,18 @@ For example:
 Now that you have experimented with one or more of these sense-making systems **characterize their behavior**.
 During the lecture, we mentioned questions to help characterize a material:
 * What can you use X for?
+> Our system can be used for a variety of applications, such as modeling movements for a performance or gameplay, performing actions remotely, or as an interactive artwork. These applications are explored further in part 2.
 * What is a good environment for X?
+> A good environment is one where there is plenty of space for the user to stand and have their whole body in frame of the camera. Good lighting is also important.
 * What is a bad environment for X?
+> A bad environment is tight spaces, since the pose detection does not function well if it cannot see most of a users' body. Additionally if there is no light, then the sensor also will not work.
 * When will X break?
+> X will break in bad environments as described above
 * When it breaks how will X break?
+> When it breaks, our model will perform random movements as the detected poses are misclassified, or it will simply stop moving. 
 * What are other properties/behaviors of X?
 * How does X feel?
+> It feels pretty cool to watch the model arm follow your real-time movements, sort of mesmerizing. 
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
