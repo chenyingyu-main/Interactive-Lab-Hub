@@ -270,6 +270,16 @@ For example:
 4. Based on the behavior you have seen, what other scenarios could cause problems?
 >At the beginning, the servo often moves erratically. If multiple people enter the camera frame, confusion may also occur.
 
+
+[Shreya Initial Testing Video](https://drive.google.com/file/d/1xe-Ycy_xJDwAkDrmGmYguij1B5reEs9V/view?usp=sharing)
+
+Other observations:
+> - When the user moves their arm slowly and steadily, the prototype seems to move along well with user's arm, however when the user speeds thier motions, the prototype has a harder time reflecting that movement. 
+> - The system works best when both arms are in frame and to do so, the user must be pretty far away from the camera and the prototype
+> - The prototype is a littly bulky and often the tape is not enough to keep the the components together. Often the second servo will come off the upperarm due to the tape not being strong enough
+> - Due to the servo's range of motion, a user has a limited range (from diagonally down to diagonally up for the upper arm and from straight to bent for the lower arm)
+
+
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
 > At frst, users are likely not aware of the uncertainties of the system, such as it not working properly if their face or body parts are out of frame. However, since they can see the video and how their arm is being detected, they can quickly learn how to improve performance of the system by moving around until the model moves smoothly. 
@@ -345,4 +355,22 @@ Please see the **design diagram and prototype** below. 🤖✨
 
 ![demo1](images/demo1.png)
 
+
+Our code is located in pose.py in this repo
+> We implemented our code using MediaPipe Pose, more specifically the pose_landmarker_lite model as we found this to work best for our use case, to track a user's arm movements from the camera then map the joint angles to the servo motor positions to follow the user's arm motions in real-time
+
 **\*\*\*Include a short video demonstrating the finished result.\*\*\***
+
+[Finished Result](https://drive.google.com/file/d/1o0Ycdml96MYCBr1kI-ZU8dp1WC1mBWdv/view?usp=sharing)
+
+Final Feedback 
+> - The prototype seems to shake a lot when moving and it is a little jarring to see, it would be great if there was a way to smooth out the motion 
+> - One way this can be used is in an art installiation using the same priciples to create cool shadow art
+> - It is difficult to see yourself since you have to stand a little far away from the camera
+> - There are sometimes some hallucinations where the arms move without the user moving
+
+Final Reflections:
+> - A couple ways that we could expand on this is to add motion to the legs and head, we wanted to add legs as well, but we ended up lacking servos to do so!
+> - We wanted to also have the user be able to add little costumes to the figure so that there can be customization of the shadow figures and how it looks
+> - To address the concerns about the hallucinations, and smoothing, we would take another look at our code to try and smooth the motion of the arms and look at the updating of the position of the arm
+> - To address concerns about the visual being too small, we were thinking we could plug the pi into a larger montior instead or move the camera so that instead of resting on the laptop to rest upon a different structure much further back
