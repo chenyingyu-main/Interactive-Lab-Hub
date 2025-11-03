@@ -228,7 +228,7 @@ In an earlier version of this class students experimented with foundational comp
 **2️⃣ Model / Mechanism:**
 > For part 1, we tried mapping one arm first to ensure the servo response for experiment.
 > 
-> Not yet for documentation.
+> The model returns the **coordinates of the arm joints**, which we then use to calculate the angles geometrically and control the servo’s rotation accordingly.
 
 **3️⃣ Interaction Input & Output:**
 > * **Input:** Web Camera (Camera feed capturing user’s upper-body movement. (via MediaPipe Pose))
@@ -239,6 +239,15 @@ In an earlier version of this class students experimented with foundational comp
 > ![image](images/partb1.jpg)
 > 
 > We will observe which setup is easier to implement and which one makes more sense.
+
+We ended up choosing **setup (C)**, where the servo is connected to the tip of one fan blade.
+The figure below shows an example of this setup (left), and the right image shows our initial arm prototype, which was too fragile and eventually broke.
+
+
+<div style="display:flex; gap:2%; align-items:flex-start;">
+  <img src="images/prototype.jpg" style="height:300px; object-fit:cover;" alt="Image 1"/>
+  <img src="images/prototype2.jpg" style="height:300px; object-fit:cover;" alt="Image 2"/>
+</div>
 
 
 **4️⃣ Experiment and Findings:**
@@ -276,6 +285,7 @@ During the lecture, we mentioned questions to help characterize a material:
 * How does X feel?
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
+
 
 ### Part 2.
 
