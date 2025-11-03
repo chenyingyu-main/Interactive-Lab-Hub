@@ -263,9 +263,13 @@ The figure below shows an example of this setup (left), and the right image show
 Now flight test your interactive prototype and **note down your observations**:
 For example:
 1. When does it what it is supposed to do?
-1. When does it fail?
-1. When it fails, why does it fail?
-1. Based on the behavior you have seen, what other scenarios could cause problems?
+> When a person enters the frame and the face is visible, the pipeline reliably starts and the servo responds to the tracked arm/hand coordinates.
+2. When does it fail?
+> If the face is visible but the arm is not (or partially out of frame), the joint coordinates become noisy or inconsistent and the servo moves erratically.
+3. When it fails, why does it fail?
+> MediaPipe / pose model appears to anchor detection on the face; if the face is detected it still outputs coordinates for all keypoints — even ones not visible — producing misleading values. The servo uses those coordinates directly, causing incorrect angles. (And sometimes, this breaks the prototype arms we made...)
+4. Based on the behavior you have seen, what other scenarios could cause problems?
+>At the beginning, the servo often moves erratically. If multiple people enter the camera frame, confusion may also occur.
 
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
