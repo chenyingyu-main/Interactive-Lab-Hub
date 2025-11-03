@@ -74,8 +74,7 @@ Read the `infer.py` script and become familiar with the code. You can change the
 
 </details>
 
-
-<img src="images/pytorch.png" width="700"/>
+![image](images/pytorch.png)
 
 > We tested our model on a coffee cup from Cornell Café. As shown in the terminal output, it detected objects like cups and coffee mugs. Yet, the model didn’t perform very well — it also produced several completely unrelated predictions.
 
@@ -149,7 +148,7 @@ This will capture an image from your webcam and let you ask questions about it i
 
 </details>
 
-<img src="images/dream.png" width="700"/>
+![imaegs](images/dream.png)
 
 > The model responds quickly, its answers are sometimes off-topic (see the image above).
 
