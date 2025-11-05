@@ -21,11 +21,11 @@ mqtt_client = None
 def on_connect(client, userdata, flags, rc):
     """MQTT connected"""
     if rc == 0:
-        print(f'✓ MQTT connected to {MQTT_BROKER}:{MQTT_PORT}')
+        print(f'[OK] MQTT connected to {MQTT_BROKER}:{MQTT_PORT}')
         client.subscribe(MQTT_TOPIC)
-        print(f'✓ Subscribed to {MQTT_TOPIC}')
+        print(f'[OK] Subscribed to {MQTT_TOPIC}')
     else:
-        print(f'✗ MQTT connection failed: {rc}')
+        print(f'[NOOOO] MQTT connection failed: {rc}')
 
 
 def on_message(client, userdata, msg):
@@ -58,7 +58,7 @@ def on_message(client, userdata, msg):
                 'position': position,
                 'last_update': datetime.now()
             }
-            print(f'✓ MQTT pixel: {mac[:17]} at position {position} RGB({r},{g},{b})')
+            print(f'[OK] MQTT pixel: {mac[:17]} at position {position} RGB({r},{g},{b})')
         else:
             from datetime import datetime
             # Update existing pixel
