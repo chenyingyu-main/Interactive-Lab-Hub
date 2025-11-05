@@ -26,7 +26,7 @@ try:
 except ImportError:
     DISPLAY_AVAILABLE = False
     print("Display libraries not available - running in headless mode")
-
+ 
 
 # MQTT Configuration
 MQTT_BROKER = 'farlab.infosci.cornell.edu'
