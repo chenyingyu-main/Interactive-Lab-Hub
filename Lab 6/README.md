@@ -63,8 +63,8 @@ mosquitto_pub -h farlab.infosci.cornell.edu -p 1883 -t 'IDD/test/yourname' -m 'H
 
 **Screen shot for MQTT Messaging**
 From Ying Yu's Pi
-![image](/imgs/parta1.png)
-![image](/imgs/parta2.png)
+![image](imgs/parta1.png)
+![image](imgs/parta2.png)
 
 **💡 Brainstorm 5 ideas for messaging between devices**
 > 1. **Collaborative Gaming Status:** Enable a cooperative game (like an escape room, building an object, or a collaborative puzzle) where multiple users control different items or characters. Devices publish the status of their controlled element in real-time.
@@ -202,15 +202,15 @@ Replace this README with your documentation:
 
 > **Knife/ Cutting Board**
 >
-> ![image](/imgs/cutting.jpg)
+> ![image](imgs/cutting.jpg)
 
 > **Pan**
 >
-> ![image](/imgs/pan.jpg)
+> ![image](imgs/pan.jpg)
 
 > **Mixing Bowl**
 > 
-> ![image](/imgs/mixing.jpg)
+> ![image](imgs/mixing.jpg)
 
 **4. User Testing**
 - **Test with 2+ people NOT on your team**
