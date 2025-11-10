@@ -62,6 +62,11 @@ mosquitto_pub -h farlab.infosci.cornell.edu -p 1883 -t 'IDD/test/yourname' -m 'H
 </details>
 
 **💡 Brainstorm 5 ideas for messaging between devices**
+> 1. **Collaborative Gaming Status:** Enable a cooperative game (like an escape room, building an object, or a collaborative puzzle) where multiple users control different items or characters. Devices publish the status of their controlled element in real-time.
+> 2. **Home Monitoring Dashboard:** Create a single, unified view (like a dashboard on a tablet or web page) that displays real-time environmental data collected from various sensors and allows control of actuators. All sensors and control devices publish their status, and the dashboard subscribes to everything.
+> 3. **Security Guard and Alert System:** Use door/window contact sensors to monitor entry points. When a sensor's state changes (e.g., from closed to open), the device publishes an alert. A central security hub subscribes and triggers an immediate audible alarm or sends a notification.
+> 4. **Competitive Gaming (something like Sumo Wrestling):** Design a competitive game (like robot sumo wrestling) where the playing area itself can detect boundaries. Use capacity or pressure sensors to define a "ring." When a character/robot is pushed outside the defined area, the ring sensor publishes the event, and the game server determines the winner.
+> 5. **Social Media Collaborative Story Game:** Create a "story chain" game where each participating device/user adds the next line or paragraph to a story. When a user finishes their contribution, their device publishes the updated story fragment. All other devices subscribe to receive the latest complete story.
 
 ---
 
