@@ -37,7 +37,6 @@ playing_state = {
 # Initialize random target values for utensils
 random_pan_target = random.randint(1, 20000) 
 random_mixing_bowl_target = random.randint(0, 1023)
-random_cutting_board_target = random.randint(0, 10)
 # add more 
 
 print(f"[INIT] Pan target distance set to: {random_pan_target}")
@@ -53,8 +52,7 @@ SOUND_RULES = {
     },
     'cutting_board': {
         'file': 'sounds/knife-stab-pull.mp3',
-        'target_value': random_cutting_board_target,
-        'should_play': lambda data: isinstance(data, (list, tuple)) and len(data) > 0 and data[SOUND_RULES['cutting_board']['target_value']] == 1
+        'should_play': lambda data: isinstance(data, (list, tuple)) and len(data) > 0 and data[0] == 1
     },
     'mixing_bowl': {
         'file': 'sounds/whisking.mp3',
@@ -137,7 +135,6 @@ def on_message(client, userdata, msg):
             playing_state[utensil] = False
 
             # Reset/ Generate new target value for utensil if applicable
-            # But maybe we can do the reset on "button press" instead?
             if utensil in ['pan', 'mixing_bowl']:
                 generate_new_target(utensil)
             

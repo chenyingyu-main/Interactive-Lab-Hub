@@ -61,6 +61,11 @@ mosquitto_pub -h farlab.infosci.cornell.edu -p 1883 -t 'IDD/test/yourname' -m 'H
 
 </details>
 
+**Screen shot for MQTT Messaging**
+From Ying Yu's Pi
+![image](/imgs/parta1.png)
+![image](/imgs/parta2.png)
+
 **💡 Brainstorm 5 ideas for messaging between devices**
 > 1. **Collaborative Gaming Status:** Enable a cooperative game (like an escape room, building an object, or a collaborative puzzle) where multiple users control different items or characters. Devices publish the status of their controlled element in real-time.
 > 2. **Home Monitoring Dashboard:** Create a single, unified view (like a dashboard on a tablet or web page) that displays real-time environmental data collected from various sensors and allows control of actuators. All sensors and control devices publish their status, and the dashboard subscribes to everything.
@@ -175,16 +180,37 @@ Hold colored objects near sensor to change your pixel!
 Replace this README with your documentation:
 
 **1. Project Description**
-- What does it do? Why interesting? User experience?
+- What does it do? Why interesting? User experience
+> The project is the detection of coordination from three different sensors on different pis which serves as the foundation for oour multiplayer cooking-themed rhythm game. Each Pi represents a different player's kitchen utensil whcih are the following:
+> - A "knife/cutting-board" where a user must chops on specific places on a board
+> - A "mixing bowl" where a user use a dowel to mix around the bowl at a certain speed
+> - A "pan" where a user has to both manage the heat of the stove and when the take the pan off the heat
+> It's interesting since it is the basis of a synchronized collaborative physical cooking experiencethat is both great as a game-mechanic as well as an experience to uniquely collaborate through the cooking motions.
+> Upon the synchronizatin of the physical actions (when the "knife" hits the board, "mixing bowl" is strirred, and the "pan" stove is off and "pan" is off the sove all at the same time, the system plays a victory sound)  
+
 
 **2. Architecture Diagram**
 - Hardware, connections, data flow
 - Label input/computation/output
 
+> Ying Yu will finish it
+
 **3. Build Documentation**
 - Photos of each Pi + sensors
 - MQTT topics used
 - Code snippets with explanations
+
+> **Knife/ Cutting Board**
+>
+> ![image](/imgs/cutting.jpg)
+
+> **Pan**
+>
+> ![image](/imgs/pan.jpg)
+
+> **Mixing Bowl**
+> 
+> ![image](/imgs/mixing.jpg)
 
 **4. User Testing**
 - **Test with 2+ people NOT on your team**
@@ -201,7 +227,7 @@ Replace this README with your documentation:
 
 ---
 
-<details><summary>Click for information: Code Files, Debugging Tools, Troubleshooting, </summary>
+<details><summary>Click for information: Code Files, Debugging Tools, Troubleshooting </summary>
 
 
 ## Code Files
