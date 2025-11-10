@@ -131,6 +131,8 @@ Hold colored objects near sensor to change your pixel!
 </details>
 
 **📸 Include: Screenshot of grid + photo of your Pi setup**
+🎥 See the testing video from Ying Yu below.
+[![youtube](https://img.youtube.com/vi/zrZQ_2HXI1o/0.jpg)](https://youtube.com/shorts/zrZQ_2HXI1o)
 
 ---
 
