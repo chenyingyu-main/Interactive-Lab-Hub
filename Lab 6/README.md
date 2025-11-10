@@ -1,6 +1,6 @@
 # Distributed Interaction
 
-**NAMES OF COLLABORATORS HERE**
+**NAMES OF COLLABORATORS HERE** [Amanda Lu](https://github.com/amandazlu/Interactive-Lab-Hub/tree/Fall2025/Lab%206), [Shreya Kethi Reddy](https://github.com/littleredpolkadot/Interactive-Lab-Hub/tree/Fall2025/Lab%206), [Miriam Alex](https://github.com/miriam-alex/Interactive-Lab-Hub/tree/Fall2025/Lab%206)
 
 For submission, replace this section with your documentation!
 
@@ -16,8 +16,8 @@ For submission, replace this section with your documentation!
 Build interactive systems where **multiple devices communicate over a network** using MQTT messaging. Work in teams of 3+ with Raspberry Pis.
 
 **Parts:**
-- A: Learn MQTT messaging
-- B: Try collaborative pixel grid demo  
+- ✅ A: Learn MQTT messaging
+- ✅ B: Try collaborative pixel grid demo  
 - C: Build your own distributed system
 
 ---
@@ -25,6 +25,8 @@ Build interactive systems where **multiple devices communicate over a network** 
 ## Part A: MQTT Messaging
 
 MQTT = lightweight messaging for IoT. Publish/subscribe model with central broker.
+
+<details>
 
 **Concepts:**
 - **Broker**: `farlab.infosci.cornell.edu:1883`
@@ -57,6 +59,8 @@ mosquitto_pub -h farlab.infosci.cornell.edu -p 1883 -t 'IDD/test/yourname' -m 'H
 
 ![MQTT Explorer showing messages](imgs/MQTT-explorer.png)
 
+</details>
+
 **💡 Brainstorm 5 ideas for messaging between devices**
 
 ---
@@ -64,6 +68,8 @@ mosquitto_pub -h farlab.infosci.cornell.edu -p 1883 -t 'IDD/test/yourname' -m 'H
 ## Part B: Collaborative Pixel Grid
 
 Each Pi = one pixel, controlled by RGB sensor, displayed in real-time grid.
+
+<details>
 
 **Architecture:** `Pi (sensor) → MQTT → Server → Web Browser`
 
@@ -120,6 +126,9 @@ python pixel_grid_publisher.py
 Hold colored objects near sensor to change your pixel!
 
 ![Pixel grid with two devices](imgs/two-devices-grid.png)
+
+
+</details>
 
 **📸 Include: Screenshot of grid + photo of your Pi setup**
 
