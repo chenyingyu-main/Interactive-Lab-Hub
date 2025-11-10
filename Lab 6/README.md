@@ -201,6 +201,9 @@ Replace this README with your documentation:
 
 ---
 
+<details><summary>Click for information: Code Files, Debugging Tools, Troubleshooting, </summary>
+
+
 ## Code Files
 
 **Server files:**
@@ -244,6 +247,10 @@ mosquitto_sub -h farlab.infosci.cornell.edu -p 1883 -t "IDD/#" -u idd -P "device
 **Grid:** Verify server running, check MQTT in console, test with web controller
 
 **Pi venv:** Make sure to activate: `source .venv/bin/activate`
+
+
+</details>
+
 
 
 ---
