@@ -21,7 +21,7 @@ recent_messages = deque(maxlen=MAX_MESSAGES)
 # MQTT Configuration
 MQTT_BROKER = 'farlab.infosci.cornell.edu'
 MQTT_PORT = 1883
-MQTT_TOPIC = 'IDD/kitchen-instrument'  # Subscribe to all IDD topics
+MQTT_TOPIC = 'IDD/#'  # Subscribe to all IDD topics
 MQTT_USERNAME = 'idd'
 MQTT_PASSWORD = 'device@theFarm'
 
@@ -31,11 +31,11 @@ mqtt_client = None
 def on_connect(client, userdata, flags, rc):
     """MQTT connected"""
     if rc == 0:
-        print(f'MQTT connected to {MQTT_BROKER}:{MQTT_PORT}')
+        print(f'✓ MQTT connected to {MQTT_BROKER}:{MQTT_PORT}')
         client.subscribe(MQTT_TOPIC)
-        print(f'Subscribed to {MQTT_TOPIC}')
+        print(f'✓ Subscribed to {MQTT_TOPIC}')
     else:
-        print(f'MQTT connection failed: {rc}')
+        print(f'✗ MQTT connection failed: {rc}')
 
 
 def on_message(client, userdata, msg):
@@ -60,7 +60,7 @@ def on_message(client, userdata, msg):
         
         # Add to recent messages
         recent_messages.append(message)
-
+        
         # Broadcast to all connected web clients
         socketio.emit('mqtt_message', message, namespace='/')
         
@@ -86,14 +86,14 @@ def start_mqtt_client():
         return True
         
     except Exception as e:
-        print(f'[ERR] MQTT client failed: {e}')
+        print(f'⚠️  MQTT client failed: {e}')
         return False
 
 
 @app.route('/')
 def index():
     """Main viewer page"""
-    return render_template('kitchen.html')
+    return render_template('mqtt_viewer.html')
 
 
 @socketio.on('connect')
