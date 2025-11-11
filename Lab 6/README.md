@@ -1,6 +1,6 @@
 # Distributed Interaction
 
-**NAMES OF COLLABORATORS HERE** [Amanda Lu](https://github.com/amandazlu/Interactive-Lab-Hub/tree/Fall2025/Lab%206), [Shreya Kethi Reddy](https://github.com/littleredpolkadot/Interactive-Lab-Hub/tree/Fall2025/Lab%206), [Miriam Alex](https://github.com/miriam-alex/Interactive-Lab-Hub/tree/Fall2025/Lab%206)
+**NAMES OF COLLABORATORS HERE** [Amanda Lu](https://github.com/amandazlu/Interactive-Lab-Hub/tree/Fall2025/Lab%206), [Shreya Kethi Reddy](https://github.com/littleredpolkadot/Interactive-Lab-Hub/tree/Fall2025/Lab%206), [Miriam Alex](https://github.com/miriam-alex/Interactive-Lab-Hub/tree/Fall2025/Lab%206), [Ying Yu Chen (This repo)](https://github.com/chenyingyu-main/Interactive-Lab-Hub/tree/Fall2025/Lab%206)
 
 For submission, replace this section with your documentation!
 
