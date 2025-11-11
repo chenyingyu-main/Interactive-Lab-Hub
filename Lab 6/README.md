@@ -339,12 +339,12 @@ mosquitto_sub -h farlab.infosci.cornell.edu -p 1883 -t "IDD/#" -u idd -P "device
 ## Submission Checklist
 
 Before submitting:
-- [ ] Delete prep/instructions above
-- [ ] Add YOUR project documentation
-- [ ] Include photos/videos/diagrams  
+- [x] Delete prep/instructions above
+- [x] Add YOUR project documentation
+- [x] Include photos/videos/diagrams  
 - [ ] Document user testing with non-team members
 - [ ] Add reflection on learnings
-- [ ] List team names at top
+- [x] List team names at top
 
 **Your README = story of what YOU built!**
 
