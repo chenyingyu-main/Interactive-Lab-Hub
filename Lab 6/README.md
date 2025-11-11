@@ -276,6 +276,10 @@ Replace this README with your documentation:
 - How did sensor events work?
 - What would you improve?
 
+**🎥 Video**
+* [Test with the MQTT Messaging](https://youtu.be/gWVzn_YbFjk)
+* [Sound Integrated](https://youtube.com/shorts/l5_PfEa0vT8)
+
 ---
 
 <details><summary>Click for information: Code Files, Debugging Tools, Troubleshooting </summary>
