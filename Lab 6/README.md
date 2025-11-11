@@ -192,8 +192,7 @@ Replace this README with your documentation:
 **2. Architecture Diagram**
 - Hardware, connections, data flow
 - Label input/computation/output
-
-> Ying Yu will finish it
+![graph](/Lab%206/imgs/grapph.jpg)
 
 **3. Build Documentation**
 - Photos of each Pi + sensors
