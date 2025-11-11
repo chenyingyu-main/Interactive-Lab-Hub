@@ -35,12 +35,15 @@ playing_state = {
 }
 
 # Initialize random target values for utensils
-random_pan_target = random.randint(1, 20000) 
+random_pan_target = random.randint(10, 10000) 
 random_mixing_bowl_target = random.randint(0, 1023)
+random_cutting_board_target = random.randint(0, 2)
 # add more 
 
 print(f"[INIT] Pan target distance set to: {random_pan_target}")
 print(f"[INIT] Mixing Bowl target X set to: {random_mixing_bowl_target}")
+print(f"[INIT] Cutting Board target set to: {random_cutting_board_target}")
+
 
 # Sound configuration: utensil -> (file_path, condition_function)
 # Sound configuration: utensil -> (file_path, condition_function)
@@ -52,7 +55,8 @@ SOUND_RULES = {
     },
     'cutting_board': {
         'file': 'sounds/knife-stab-pull.mp3',
-        'should_play': lambda data: isinstance(data, (list, tuple)) and len(data) > 0 and data[0] == 1
+        'target_value': random_cutting_board_target,
+        'should_play': lambda data: len(data) > 0 and data[str(SOUND_RULES['cutting_board']['target_value'])] == 1
     },
     'mixing_bowl': {
         'file': 'sounds/whisking.mp3',
@@ -114,7 +118,7 @@ def on_message(client, userdata, msg):
         # Play sounds based on utensil and data
         utensil = payload.get('utensil', 'unknown') if is_json else 'unknown'
         data = payload.get('data', {}) if is_json else {}
-
+        
         # Get rule for this utensil
         rule = SOUND_RULES.get(utensil)
         if not rule:
@@ -135,7 +139,8 @@ def on_message(client, userdata, msg):
             playing_state[utensil] = False
 
             # Reset/ Generate new target value for utensil if applicable
-            if utensil in ['pan', 'mixing_bowl']:
+            # But maybe we can do the reset on "button press" instead?
+            if utensil in ['pan', 'mixing_bowl','cutting_board']:
                 generate_new_target(utensil)
             
         # Add to recent messages
@@ -216,6 +221,13 @@ def generate_new_target(utensil):
         new_target = random.randint(0, 1023)
         SOUND_RULES['mixing_bowl']['target_value'] = new_target
         print(f"[TARGET UPDATE] mixing target distance set to: {new_target}")
+
+        return new_target
+    elif utensil == 'cutting_board':
+        # set a new random target x for mixing bowl
+        new_target = random.randint(0, 2)
+        SOUND_RULES['cutting_board']['target_value'] = new_target
+        print(f"[TARGET UPDATE] cutting target distance set to: {new_target}")
 
         return new_target
     return None

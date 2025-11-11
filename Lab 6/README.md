@@ -200,27 +200,55 @@ Replace this README with your documentation:
 - MQTT topics used
 - Code snippets with explanations
 
-> **Action Viewer**
+>> **Action Viewer**
 > 
-> 處理收到的 data (from pan, mixing bowl, cutting broad)。Subscribe to messages (listener)
+> The Action Viewer acts as the central game server and display. Its primary role is to subscribe to all incoming instrument status data from the Player Publishers (Pan, Mixing Bowl, Cutting Board). This component handles all received data, executes the game logic, provides feedback, and broadcasts updates to any web clients.
 >
 > **MQTT Messaging Details (Listener):** 
+> * Broker: farlab.infosci.cornell.edu:1883
+> * Subscribed Topic: IDD/kitchen-instrument
+> * Data Format: Received data is expected to be in JSON format, containing the status information for the various kitchen instruments.
+> **Code:** Lab 6/mqtt_viewer_instrument.py
+> 
+> The Viewer randomly generates a set of required Target Values for the Pan, Mixing Bowl, and Cutting Board instruments (e.g., a specific X range for the Mixing Bowl, a specific distance value for the Pan).
+> 
+> When new data is received via MQTT (identify by the utensil label), the Viewer parses the JSON message to extract the current instrument values. It then checks if the transmitted values conform to the currently active Target Values.
+>
+> If the received values meet the required targets, the Viewer plays the corresponding audio tone or sound effect (via speaker output); then immediately generates a new set of random Target Values, prompting the players to perform the next action in the rhythm game.
+
+>> **Knife/ Cutting Board**
+>
+> ![image](imgs/cutting.jpg)
+>
+> This component simulates the action of chopping ingredients on a Cutting Board using a capacitive sensor. The sensor is segmented into multiple channels. The device's primary function is to continuously detect which channel is being touched and transmit this channel status data via MQTT. This simulates chopping on the correct section of the board.
+> 
+> **MQTT Messaging Details:** 
+> * Data Source: Capacitive Sensor Channels (Channels 0–11).
+> * Target Broker: farlab.infosci.cornell.edu:1883
+> * Topic: IDD/kitchen-instrument
+> 
+> **Code:** Lab 6/instrument_knife_publisher.py
+> The main loop reads the status of the capacitive sensor's channels (typically channels 0 through 11).
+> The current channel status is formatted into a JSON object (similar to a hashmap) where the key is the channel number and the value is its state (typically 1 for touched/active, 0 for untouched/inactive). 
+
+>> **Pan**
+>
+> ![image](imgs/pan.jpg)
+> 
+> This component simulates the action of stir-frying or cooking by using a Distance Sensor to detect the pan's proximity to a simulated "heat source" or a fixed reference point. The device's primary function is to continuously capture the distance value and transmit it via MQTT to simulate the chef controlling the pan's height.
+>
+> **MQTT Messaging Details:** 
+> * Data Source: Distance Sensor (Numerical Value).
+>     * Interpretation: A large value (e.g., $2000+$) indicates the pan is very close to the sensor/heat source. A very small value ($0, 1, 2$) indicates the pan is far away (almost nothing detected).
 > * Target Broker: farlab.infosci.cornell.edu:1883
 > * Topic: IDD/kitchen-instrument
 >
-> **Code:** Lab 6/mqtt_viewer_instrument.py
+> **Code:** /Lab 6/instrument_pan_publisher.py
+> 
+> The main loop repeatedly reads the raw numerical output from the distance sensor. The current distance value is formatted into a message (e.g., a simple numerical string or a JSON object containing the value) and published to the shared topic.
 
-> **Knife/ Cutting Board**
->
-> ![image](imgs/cutting.jpg)
-> Shreya's part
 
-> **Pan**
->
-> ![image](imgs/pan.jpg)
-> Amanda's Part
-
-> **Mixing Bowl**
+>> **Mixing Bowl**
 > 
 > ![image](imgs/mixing.jpg)
 >
