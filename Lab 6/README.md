@@ -269,12 +269,29 @@ Replace this README with your documentation:
 - What did they think before trying?
 - What surprised them?
 - What would they change?
+ 
+> **Testers: Marianne Arriola, Deviki Veerareddy**
+> - Before trying, the testers could tell that it was a multi-player game pretty easily, however they did not realize it was a cooking game until we told them
+> - The cutting board especially surprised one of our testers felt as if the separate tapping of the rod did not mirror the knife cutting (they didn't know what to do intuitively)
+> - Both of our testers liked how the sounds played while doing the actions, however wished there was some way to play multiple sounds when multiple actions were being done (ie. chopping & mixing
+> - One tester suggested a great application/extension would be to compose music using each as a instrument
+> - Noticed that the pan distance sensor worked most of the time, but at times was slightly buggy
+> - After revealing the intent of the final project, our testers agreed that a visual UI would be very helpful for timing and synchronization
+
 
 **5. Reflection**
 - What worked well?
 - Challenges with distributed interaction?
 - How did sensor events work?
 - What would you improve?
+
+> - The accuracy and speed of data streamed to server wokred well (sensor inputs were detected very well) and the sounds played were also pretty accurate in terms of timing with use and non-use of the sensors
+> - We did face some challenges in getting all three pis to co-ordinate and switch using the shared speaker system in terms of order of usage of the different sensors due to timing and sensistivity issues as well as audio lengths
+> - Each pi was assigned a specific cooking action (distance sensor -> pan, joystick -> mixing bowl, capacitator -> bowl) and all of these devices published messages to the same topic which was monitored for the speaker to know what sound to currently play
+> - We hope to imporve the sensor interactions to be more complex as we are using this as a baseline initiial step for our final project
+> - In addition we hope to improve the multiple sounds playing at once by playing sounds that are stacked audios of the two/three cooking utensils that are in use
+> - Another aspect we hope to improve on is making the physical cutting board more realistic mimicking a single lever-style chopping motion (up-to-down) rather than requiring repeated taps across the cutting board
+> - We are hoping to take this project in the direction of detecting synchronized timings and gamifying the experience we have now which would allow for a more interesting user interaction 
 
 **🎥 Video**
 * [Test with the MQTT Messaging](https://youtu.be/gWVzn_YbFjk)
