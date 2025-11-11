@@ -200,17 +200,41 @@ Replace this README with your documentation:
 - MQTT topics used
 - Code snippets with explanations
 
+> **Action Viewer**
+> 
+> 處理收到的 data (from pan, mixing bowl, cutting broad)。Subscribe to messages (listener)
+>
+> **MQTT Messaging Details (Listener):** 
+> * Target Broker: farlab.infosci.cornell.edu:1883
+> * Topic: IDD/kitchen-instrument
+>
+> **Code:** Lab 6/mqtt_viewer_instrument.py
+
 > **Knife/ Cutting Board**
 >
 > ![image](imgs/cutting.jpg)
+> Shreya's part
 
 > **Pan**
 >
 > ![image](imgs/pan.jpg)
+> Amanda's Part
 
 > **Mixing Bowl**
 > 
 > ![image](imgs/mixing.jpg)
+>
+> This component simulates the action of mixing ingredients in a Mixing Bowl using a joystick as the sensor input. The device's primary function is to continuously capture the joystick's X and Y coordinates and transmit this data via MQTT.
+>
+> **MQTT Messaging Details:** 
+> * Data Source: Joystick (X and Y axis values).
+> * Target Broker: farlab.infosci.cornell.edu:1883
+> * Topic: IDD/kitchen-instrument
+> * Publish Frequency: 20 Hz (once 0.05 sec)
+> **Code:** Lab 6/mixing_bowl_publisher.py
+> 
+> The core logic resides within the main loop. This loop reads the current X and Y values from the connected joystick.
+> The X and Y values are formatted into a message (e.g., a simple string or JSON object) and published to the specified topic at a high frequency of 20 Hz to ensure near real-time tracking of the mixing motion.
 
 **4. User Testing**
 - **Test with 2+ people NOT on your team**
