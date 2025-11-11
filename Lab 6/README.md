@@ -18,7 +18,7 @@ Build interactive systems where **multiple devices communicate over a network** 
 **Parts:**
 - ✅ A: Learn MQTT messaging
 - ✅ B: Try collaborative pixel grid demo  
-- C: Build your own distributed system
+- ✅ C: Build your own distributed system
 
 ---
 
@@ -359,8 +359,8 @@ Before submitting:
 - [x] Delete prep/instructions above
 - [x] Add YOUR project documentation
 - [x] Include photos/videos/diagrams  
-- [ ] Document user testing with non-team members
-- [ ] Add reflection on learnings
+- [x] Document user testing with non-team members
+- [x] Add reflection on learnings
 - [x] List team names at top
 
 **Your README = story of what YOU built!**
