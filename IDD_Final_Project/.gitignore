@@ -1,8 +1,0 @@
-.DS_Store
-*.scorer
-venv
-venv*
-__*
-
-.venv*
-.venv/
