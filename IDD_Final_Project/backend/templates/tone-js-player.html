@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIDI JSON Player</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #333;
+      margin-top: 0;
+    }
+    button {
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px 5px;
+      transition: all 0.3s;
+    }
+    button:hover {
+      background: #5568d3;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .controls {
+      margin: 20px 0;
+    }
+    .track-info {
+      margin: 20px 0;
+      padding: 15px;
+      background: #f5f5f5;
+      border-radius: 8px;
+    }
+    .track {
+      margin: 10px 0;
+      padding: 10px;
+      background: white;
+      border-left: 4px solid #667eea;
+      border-radius: 4px;
+    }
+    .progress {
+      width: 100%;
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 4px;
+      margin: 20px 0;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: #667eea;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎵 MIDI JSON Player</h1>
+    
+    <div class="controls">
+      <input type="file" id="fileInput" accept=".json" />
+      <button id="loadBtn">📁 Load JSON</button>
+    </div>
+
+    <div class="controls">
+      <button id="playBtn" disabled>▶ Play</button>
+      <button id="stopBtn" disabled>⏹ Stop</button>
+    </div>
+
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="track-info" id="trackInfo"></div>
+  </div>
+
+  <script>
+    const midiData = {
+      "header": {
+        "keySignatures": [],
+        "meta": [],
+        "name": "Four Instrument MIDI",
+        "ppq": 480,
+        "tempos": [{ "bpm": 60, "ticks": 0 }],
+        "timeSignatures": [{ "timeSignature": [4, 4], "ticks": 0 }]
+      },
+      "tracks": [
+        {
+          "name": "Instrument 1",
+          "channel": 0,
+          "pitchBends": [],
+          "notes": [
+            { "midi": 60, "time": 0, "ticks": 0, "durationTicks": 480, "name": "C4", "pitch": "C", "octave": 4, "velocity": 0.8, "duration": 1 },
+            { "midi": 62, "time": 1.5, "ticks": 720, "durationTicks": 480, "name": "D4", "pitch": "D", "octave": 4, "velocity": 0.8, "duration": 1 },
+            { "midi": 64, "time": 3, "ticks": 1440, "durationTicks": 480, "name": "E4", "pitch": "E", "octave": 4, "velocity": 0.8, "duration": 1 }
+          ],
+          "controlChanges": {},
+          "instrument": { "number": 0, "family": "piano", "name": "acoustic grand piano", "percussion": false }
+        },
+        {
+          "name": "Instrument 2",
+          "channel": 1,
+          "pitchBends": [],
+          "notes": [
+            { "midi": 57, "time": 0, "ticks": 0, "durationTicks": 960, "name": "A3", "pitch": "A", "octave": 3, "velocity": 0.8, "duration": 2 },
+            { "midi": 59, "time": 2.5, "ticks": 1200, "durationTicks": 720, "name": "B3", "pitch": "B", "octave": 3, "velocity": 0.8, "duration": 1.5 },
+            { "midi": 60, "time": 4.5, "ticks": 2160, "durationTicks": 480, "name": "C4", "pitch": "C", "octave": 4, "velocity": 0.8, "duration": 1 },
+            { "midi": 57, "time": 6, "ticks": 2880, "durationTicks": 480, "name": "A3", "pitch": "A", "octave": 3, "velocity": 0.8, "duration": 1 }
+          ],
+          "controlChanges": {},
+          "instrument": { "number": 32, "family": "guitar", "name": "acoustic guitar (nylon)", "percussion": false }
+        },
+        {
+          "name": "Instrument 3",
+          "channel": 2,
+          "pitchBends": [],
+          "notes": [
+            { "midi": 55, "time": 0, "ticks": 0, "durationTicks": 576, "name": "G3", "pitch": "G", "octave": 3, "velocity": 0.8, "duration": 1.2 },
+            { "midi": 53, "time": 1.5, "ticks": 720, "durationTicks": 576, "name": "F3", "pitch": "F", "octave": 3, "velocity": 0.8, "duration": 1.2 },
+            { "midi": 52, "time": 3.5, "ticks": 1680, "durationTicks": 576, "name": "E3", "pitch": "E", "octave": 3, "velocity": 0.8, "duration": 1.2 }
+          ],
+          "controlChanges": {},
+          "instrument": { "number": 48, "family": "strings", "name": "string ensemble 1", "percussion": false }
+        },
+        {
+          "name": "Instrument 4",
+          "channel": 3,
+          "pitchBends": [],
+          "notes": [
+            { "midi": 48, "time": 0, "ticks": 0, "durationTicks": 1200, "name": "C3", "pitch": "C", "octave": 3, "velocity": 0.8, "duration": 2.5 },
+            { "midi": 43, "time": 3, "ticks": 1440, "durationTicks": 720, "name": "G2", "pitch": "G", "octave": 2, "velocity": 0.8, "duration": 1.5 },
+            { "midi": 41, "time": 5, "ticks": 2400, "durationTicks": 720, "name": "F2", "pitch": "F", "octave": 2, "velocity": 0.8, "duration": 1.5 }
+          ],
+          "controlChanges": {},
+          "instrument": { "number": 16, "family": "organ", "name": "drawbar organ", "percussion": false }
+        }
+      ]
+    };
+
+    // Convert MIDI note number to frequency
+    function midiToFreq(midi) {
+      return Tone.Frequency(midi, "midi").toFrequency();
+    }
+
+    // Create synths for each track
+    const synths = [];
+    const scheduledEvents = [];
+    let totalDuration = 0;
+    let progressInterval = null;
+
+    // Display track information
+    const trackInfoDiv = document.getElementById('trackInfo');
+    midiData.tracks.forEach((track, i) => {
+      const trackDiv = document.createElement('div');
+      trackDiv.className = 'track';
+      trackDiv.innerHTML = `
+        <strong>${track.name}</strong> - ${track.instrument.name}<br>
+        <small>${track.notes.length} notes</small>
+      `;
+      trackInfoDiv.appendChild(trackDiv);
+
+      // Create a synth for each track
+      const synth = new Tone.PolySynth(Tone.Synth, {
+        oscillator: { type: 'triangle' },
+        envelope: {
+          attack: 0.01,
+          decay: 0.1,
+          sustain: 0.3,
+          release: 0.5
+        }
+      }).toDestination();
+      
+      synths.push(synth);
+
+      // Calculate total duration
+      track.notes.forEach(note => {
+        const endTime = note.time + note.duration;
+        if (endTime > totalDuration) totalDuration = endTime;
+      });
+    });
+
+    const playBtn = document.getElementById('playBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const progressBar = document.getElementById('progressBar');
+
+    playBtn.addEventListener('click', async () => {
+      await Tone.start();
+      playBtn.disabled = true;
+      stopBtn.disabled = false;
+      
+      // Set BPM
+      Tone.Transport.bpm.value = midiData.header.tempos[0].bpm;
+      
+      // Schedule all notes
+      midiData.tracks.forEach((track, trackIndex) => {
+        track.notes.forEach(note => {
+          scheduledEvents.push(
+            Tone.Transport.schedule((time) => {
+              synths[trackIndex].triggerAttackRelease(
+                midiToFreq(note.midi),
+                note.duration,
+                time,
+                note.velocity
+              );
+            }, note.time)
+          );
+        });
+      });
+
+      // Start transport
+      Tone.Transport.start();
+
+      // Update progress bar
+      const startTime = Tone.now();
+      progressInterval = setInterval(() => {
+        const elapsed = Tone.Transport.seconds;
+        const progress = (elapsed / totalDuration) * 100;
+        progressBar.style.width = Math.min(progress, 100) + '%';
+        
+        if (progress >= 100) {
+          stopPlayback();
+        }
+      }, 50);
+
+      // Auto-stop when done
+      Tone.Transport.schedule(() => {
+        stopPlayback();
+      }, totalDuration);
+    });
+
+    stopBtn.addEventListener('click', () => {
+      stopPlayback();
+    });
+
+    function stopPlayback() {
+      Tone.Transport.stop();
+      Tone.Transport.cancel();
+      scheduledEvents.length = 0;
+      
+      if (progressInterval) {
+        clearInterval(progressInterval);
+        progressInterval = null;
+      }
+      
+      progressBar.style.width = '0%';
+      playBtn.disabled = false;
+      stopBtn.disabled = true;
+    }
+  </script>
+</body>
+</html>

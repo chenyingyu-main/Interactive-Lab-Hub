@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitchen Rhythm - Continuous Bowl Demo</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #333;
+      margin-top: 0;
+    }
+    .upload-section {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    .upload-item {
+      margin: 15px 0;
+    }
+    .upload-item label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #555;
+    }
+    button {
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 5px;
+      transition: all 0.3s;
+    }
+    button:hover {
+      background: #5568d3;
+      transform: translateY(-2px);
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+    button.primary {
+      background: #4CAF50;
+      font-size: 18px;
+      padding: 15px 40px;
+    }
+    button.primary:hover {
+      background: #45a049;
+    }
+    button.danger {
+      background: #f44336;
+    }
+    button.danger:hover {
+      background: #da190b;
+    }
+    .info {
+      margin: 15px 0;
+      padding: 15px;
+      background: #e3f2fd;
+      border-left: 4px solid #2196F3;
+      border-radius: 5px;
+    }
+    .highlight {
+      background: #fff3e0;
+      border-left: 4px solid #ff9800;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 5px;
+    }
+    .progress {
+      width: 100%;
+      height: 30px;
+      background: #e0e0e0;
+      border-radius: 15px;
+      margin: 20px 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #4CAF50, #8BC34A);
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+    .progress-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+      color: #333;
+      text-shadow: 0 0 3px white;
+    }
+    #status {
+      font-size: 16px;
+      color: #666;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .error {
+      color: #d32f2f;
+      background: #ffebee;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+      border-left: 4px solid #d32f2f;
+    }
+    .success {
+      color: #388e3c;
+      background: #e8f5e9;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+      border-left: 4px solid #388e3c;
+    }
+    .file-status {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-left: 10px;
+      font-size: 14px;
+    }
+    .file-status.loaded {
+      background: #e8f5e9;
+      color: #388e3c;
+    }
+    .file-status.missing {
+      background: #ffebee;
+      color: #d32f2f;
+    }
+    #trackInfo {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .track {
+      margin: 10px 0;
+      padding: 10px;
+      background: white;
+      border-left: 4px solid;
+      border-radius: 4px;
+    }
+    .track.inst1 { border-color: #ff6b6b; }
+    .track.inst2 { border-color: #6ab04c; }
+    .track.inst3 { border-color: #3498db; }
+    .controls {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .volume-control {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    .volume-slider {
+      display: flex;
+      align-items: center;
+      margin: 15px 0;
+      gap: 15px;
+    }
+    .volume-slider label {
+      min-width: 150px;
+      font-weight: bold;
+      color: #555;
+    }
+    .volume-slider input[type="range"] {
+      flex: 1;
+      height: 8px;
+      border-radius: 5px;
+      outline: none;
+      -webkit-appearance: none;
+      background: #ddd;
+    }
+    .volume-slider input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #667eea;
+      cursor: pointer;
+    }
+    .volume-slider input[type="range"]::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #667eea;
+      cursor: pointer;
+      border: none;
+    }
+    .volume-value {
+      min-width: 50px;
+      text-align: right;
+      font-weight: bold;
+      color: #667eea;
+    }
+    .preset-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+    .preset-buttons button {
+      flex: 1;
+      min-width: 100px;
+    }
+    .note-indicator {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      display: none;
+      z-index: 1000;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      color: white;
+    }
+    .note-indicator.inst1 { background: #ff6b6b; }
+    .note-indicator.inst2 { background: #6ab04c; }
+    .note-indicator.inst3 { 
+      background: #3498db;
+      animation: pulse 0.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🥁 Kitchen Rhythm - Demo Version</h1>
+    
+    <div class="highlight">
+      <strong>🥣 Mixing Bowl 特色：</strong><br>
+      Hold notes 會發出<strong>連續的攪拌音效</strong>（循環音波），不是單次打擊！
+    </div>
+
+    <div class="upload-section">
+      <h3>📁 Upload Files</h3>
+      
+      <div class="upload-item">
+        <label>1. JSON Chart File (jingle_bells_game.json)</label>
+        <button onclick="document.getElementById('jsonInput').click()">Choose JSON</button>
+        <span id="jsonStatus" class="file-status missing">Not loaded</span>
+        <input type="file" id="jsonInput" accept=".json" style="display:none;">
+      </div>
+
+      <div class="upload-item">
+        <label>2. Audio File (.ogg) - Optional</label>
+        <button onclick="document.getElementById('audioInput').click()">Choose Audio</button>
+        <span id="audioStatus" class="file-status missing">Not loaded</span>
+        <input type="file" id="audioInput" accept=".ogg,.mp3,.wav" style="display:none;">
+      </div>
+    </div>
+
+    <div class="volume-control">
+      <h3>🔊 Volume Control</h3>
+      
+      <div class="volume-slider">
+        <label>🎵 Audio Music</label>
+        <input type="range" id="audioVolume" min="0" max="100" value="100">
+        <span class="volume-value" id="audioVolumeValue">100%</span>
+      </div>
+
+      <div class="volume-slider">
+        <label>🍳 Pan (打擊)</label>
+        <input type="range" id="inst1Volume" min="0" max="100" value="80">
+        <span class="volume-value" id="inst1VolumeValue">80%</span>
+      </div>
+
+      <div class="volume-slider">
+        <label>🔪 Knife (打擊)</label>
+        <input type="range" id="inst2Volume" min="0" max="100" value="80">
+        <span class="volume-value" id="inst2VolumeValue">80%</span>
+      </div>
+
+      <div class="volume-slider">
+        <label>🥣 Bowl (連續攪拌)</label>
+        <input type="range" id="inst3Volume" min="0" max="100" value="60">
+        <span class="volume-value" id="inst3VolumeValue">60%</span>
+      </div>
+
+      <div class="preset-buttons">
+        <button onclick="setPreset('audio')">Only Audio</button>
+        <button onclick="setPreset('percussion')">Only Percussion</button>
+        <button onclick="setPreset('both')">Both (Default)</button>
+        <button onclick="setPreset('bowl')">🥣 Only Bowl (Demo!)</button>
+      </div>
+    </div>
+
+    <div id="message" class="info">
+      請上傳 JSON 檔案（音樂檔案可選）
+    </div>
+
+    <div class="controls">
+      <button id="playBtn" class="primary" disabled>▶ Play</button>
+      <button id="stopBtn" class="danger" disabled>⏹ Stop</button>
+    </div>
+
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+      <div class="progress-text" id="progressText">0.0s / 0.0s</div>
+    </div>
+
+    <div id="status">Waiting for JSON...</div>
+
+    <div id="trackInfo"></div>
+  </div>
+
+  <div class="note-indicator" id="noteIndicator">
+    🥁
+  </div>
+
+  <script>
+    let midiData = null;
+    let audioPlayer = null;
+    let audioBuffer = null;
+    let audioGain = null;
+    
+    // Percussion players
+    let panPlayer = null;
+    let knifePlayer = null;
+    let bowlOscillator = null;  // Continuous oscillator for bowl
+    let bowlLFO = null;
+    let bowlFilter = null;
+    
+    let panGain = null;
+    let knifeGain = null;
+    let bowlGain = null;
+    
+    let totalDuration = 0;
+    let chartDuration = 0;
+    let progressInterval = null;
+    let isPlaying = false;
+    let hasAudio = false;
+    
+    let activeBowlNotes = [];  // Track active bowl holds
+
+    const playBtn = document.getElementById('playBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    const statusDiv = document.getElementById('status');
+    const messageDiv = document.getElementById('message');
+    const trackInfoDiv = document.getElementById('trackInfo');
+    const noteIndicator = document.getElementById('noteIndicator');
+    
+    const jsonInput = document.getElementById('jsonInput');
+    const audioInput = document.getElementById('audioInput');
+    const jsonStatus = document.getElementById('jsonStatus');
+    const audioStatus = document.getElementById('audioStatus');
+
+    const audioVolumeSlider = document.getElementById('audioVolume');
+    const inst1VolumeSlider = document.getElementById('inst1Volume');
+    const inst2VolumeSlider = document.getElementById('inst2Volume');
+    const inst3VolumeSlider = document.getElementById('inst3Volume');
+    
+    const audioVolumeValue = document.getElementById('audioVolumeValue');
+    const inst1VolumeValue = document.getElementById('inst1VolumeValue');
+    const inst2VolumeValue = document.getElementById('inst2VolumeValue');
+    const inst3VolumeValue = document.getElementById('inst3VolumeValue');
+
+    // Initialize gain nodes
+    audioGain = new Tone.Gain(1).toDestination();
+    panGain = new Tone.Gain(0.8).toDestination();
+    knifeGain = new Tone.Gain(0.8).toDestination();
+    bowlGain = new Tone.Gain(0.6).toDestination();
+
+    // Create percussion sounds
+    function createPercussionPlayers() {
+      // Pan: Metallic hit (清脆金屬聲)
+      panPlayer = new Tone.MetalSynth({
+        frequency: 300,
+        envelope: { attack: 0.001, decay: 0.2, release: 0.1 },
+        harmonicity: 8,
+        modulationIndex: 50,
+        resonance: 5000,
+        octaves: 1
+      }).connect(panGain);
+
+      // Knife: Woody knock (木頭敲擊聲)
+      knifePlayer = new Tone.NoiseSynth({
+        noise: { type: 'brown' },
+        envelope: { attack: 0.001, decay: 0.08, sustain: 0, release: 0.05 }
+      }).connect(knifeGain);
+
+      // Bowl: CONTINUOUS stirring sound (連續攪拌音效)
+      // 使用低頻震盪 + LFO 模擬連續攪拌
+      bowlFilter = new Tone.Filter({
+        type: 'lowpass',
+        frequency: 400,
+        Q: 10
+      }).connect(bowlGain);
+
+      bowlOscillator = new Tone.Oscillator({
+        type: 'sine',
+        frequency: 80  // 低頻嗡嗡聲
+      }).connect(bowlFilter);
+
+      bowlLFO = new Tone.LFO({
+        type: 'sine',
+        frequency: 4,  // 每秒震盪 4 次 (模擬攪拌速度)
+        min: 300,
+        max: 500
+      }).connect(bowlFilter.frequency);
+
+      bowlOscillator.start();
+      bowlLFO.start();
+      
+      // Initially silent
+      bowlGain.gain.value = 0;
+    }
+
+    // Volume controls
+    audioVolumeSlider.addEventListener('input', (e) => {
+      const value = e.target.value;
+      audioVolumeValue.textContent = value + '%';
+      audioGain.gain.value = value / 100;
+    });
+
+    inst1VolumeSlider.addEventListener('input', (e) => {
+      const value = e.target.value;
+      inst1VolumeValue.textContent = value + '%';
+      panGain.gain.value = value / 100;
+    });
+
+    inst2VolumeSlider.addEventListener('input', (e) => {
+      const value = e.target.value;
+      inst2VolumeValue.textContent = value + '%';
+      knifeGain.gain.value = value / 100;
+    });
+
+    inst3VolumeSlider.addEventListener('input', (e) => {
+      const value = e.target.value;
+      inst3VolumeValue.textContent = value + '%';
+      // Bowl volume is controlled by fade in/out
+    });
+
+    // Volume presets
+    window.setPreset = function(preset) {
+      switch(preset) {
+        case 'audio':
+          audioVolumeSlider.value = 100;
+          inst1VolumeSlider.value = 0;
+          inst2VolumeSlider.value = 0;
+          inst3VolumeSlider.value = 0;
+          break;
+        case 'percussion':
+          audioVolumeSlider.value = 0;
+          inst1VolumeSlider.value = 80;
+          inst2VolumeSlider.value = 80;
+          inst3VolumeSlider.value = 60;
+          break;
+        case 'both':
+          audioVolumeSlider.value = 100;
+          inst1VolumeSlider.value = 80;
+          inst2VolumeSlider.value = 80;
+          inst3VolumeSlider.value = 60;
+          break;
+        case 'bowl':
+          audioVolumeSlider.value = 0;
+          inst1VolumeSlider.value = 0;
+          inst2VolumeSlider.value = 0;
+          inst3VolumeSlider.value = 100;
+          break;
+      }
+      audioVolumeSlider.dispatchEvent(new Event('input'));
+      inst1VolumeSlider.dispatchEvent(new Event('input'));
+      inst2VolumeSlider.dispatchEvent(new Event('input'));
+      inst3VolumeSlider.dispatchEvent(new Event('input'));
+    };
+
+    // Load JSON
+    jsonInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          midiData = JSON.parse(event.target.result);
+          
+          if (!midiData.header || !midiData.tracks) {
+            throw new Error('無效的 JSON 格式');
+          }
+
+          jsonStatus.textContent = '✅ Loaded';
+          jsonStatus.className = 'file-status loaded';
+          
+          initializeChart();
+          checkReadyToPlay();
+          
+        } catch (err) {
+          messageDiv.innerHTML = `<div class="error">❌ JSON 錯誤: ${err.message}</div>`;
+          console.error(err);
+        }
+      };
+      
+      reader.readAsText(file);
+    });
+
+    // Load Audio
+    audioInput.addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      try {
+        statusDiv.textContent = '正在載入音樂...';
+        
+        const arrayBuffer = await file.arrayBuffer();
+        audioBuffer = await Tone.context.decodeAudioData(arrayBuffer);
+        
+        audioPlayer = new Tone.Player(audioBuffer).connect(audioGain);
+        totalDuration = audioBuffer.duration;
+        hasAudio = true;
+        
+        audioStatus.textContent = '✅ Loaded';
+        audioStatus.className = 'file-status loaded';
+        
+        checkReadyToPlay();
+        
+      } catch (err) {
+        messageDiv.innerHTML = `<div class="error">❌ 音樂載入失敗: ${err.message}</div>`;
+        console.error(err);
+      }
+    });
+
+    // Initialize chart display
+    function initializeChart() {
+      createPercussionPlayers();
+      
+      chartDuration = 0;
+      trackInfoDiv.innerHTML = '<h3>Track Information:</h3>';
+      
+      midiData.tracks.forEach((track, i) => {
+        const trackDiv = document.createElement('div');
+        trackDiv.className = `track inst${i+1}`;
+        
+        let firstNote = track.notes[0]?.time || 0;
+        let lastNote = track.notes[track.notes.length - 1];
+        let trackDuration = lastNote ? (lastNote.time + lastNote.duration) : 0;
+        
+        const icons = ['🍳', '🔪', '🥣'];
+        const sounds = ['金屬打擊', '木頭敲擊', '連續攪拌 (Hold)'];
+        
+        trackDiv.innerHTML = `
+          <strong>${icons[i]} ${track.name}</strong> - ${sounds[i]}<br>
+          <small>${track.notes.length} notes | 
+                 First: ${firstNote.toFixed(1)}s | 
+                 Last: ${trackDuration.toFixed(1)}s</small>
+        `;
+        trackInfoDiv.appendChild(trackDiv);
+
+        track.notes.forEach(note => {
+          const endTime = note.time + note.duration;
+          if (endTime > chartDuration) chartDuration = endTime;
+        });
+      });
+    }
+
+    // Check if ready to play
+    function checkReadyToPlay() {
+      if (midiData) {
+        playBtn.disabled = false;
+        
+        if (hasAudio) {
+          messageDiv.innerHTML = '<div class="success">✅ 準備完成！可以播放了</div>';
+          statusDiv.textContent = `Ready | 音樂: ${totalDuration.toFixed(1)}s | 譜面: ${chartDuration.toFixed(1)}s`;
+        } else {
+          messageDiv.innerHTML = '<div class="success">✅ 可以播放！(可選擇上傳音樂檔案)</div>';
+          statusDiv.textContent = `Ready | 譜面: ${chartDuration.toFixed(1)}s`;
+        }
+      }
+    }
+
+    // Play button
+    playBtn.addEventListener('click', async () => {
+      await Tone.start();
+      playBtn.disabled = true;
+      stopBtn.disabled = false;
+      isPlaying = true;
+      
+      // Start audio if available
+      if (hasAudio && audioPlayer) {
+        audioPlayer.start();
+      }
+      
+      // Schedule percussion hits
+      midiData.tracks.forEach((track, trackIndex) => {
+        track.notes.forEach(note => {
+          if (trackIndex === 0) {
+            // Pan: 金屬打擊 (短促)
+            Tone.Transport.schedule((time) => {
+              panPlayer.triggerAttackRelease('16n', time);
+              showNoteIndicator('inst1', '🍳');
+            }, note.time);
+            
+          } else if (trackIndex === 1) {
+            // Knife: 木頭敲擊 (短促)
+            Tone.Transport.schedule((time) => {
+              knifePlayer.triggerAttack(time);
+              showNoteIndicator('inst2', '🔪');
+            }, note.time);
+            
+          } else if (trackIndex === 2) {
+            // Bowl: 連續攪拌音效 (Fade in/out)
+            const targetVolume = inst3VolumeSlider.value / 100;
+            
+            // Fade in at start
+            Tone.Transport.schedule((time) => {
+              bowlGain.gain.cancelScheduledValues(time);
+              bowlGain.gain.setValueAtTime(0, time);
+              bowlGain.gain.linearRampToValueAtTime(targetVolume, time + 0.1);
+              showNoteIndicator('inst3', '🥣');
+            }, note.time);
+            
+            // Fade out at end
+            Tone.Transport.schedule((time) => {
+              bowlGain.gain.cancelScheduledValues(time);
+              bowlGain.gain.linearRampToValueAtTime(0, time + 0.1);
+            }, note.time + note.duration - 0.1);
+          }
+        });
+      });
+
+      // Start transport
+      Tone.Transport.start();
+
+      // Update progress
+      const maxDuration = hasAudio ? Math.max(totalDuration, chartDuration) : chartDuration;
+      progressInterval = setInterval(() => {
+        if (!isPlaying) return;
+        
+        const elapsed = Tone.Transport.seconds;
+        const progress = (elapsed / maxDuration) * 100;
+        progressBar.style.width = Math.min(progress, 100) + '%';
+        progressText.textContent = `${elapsed.toFixed(1)}s / ${maxDuration.toFixed(1)}s`;
+        
+        if (progress >= 100) {
+          stopPlayback();
+        }
+      }, 50);
+
+      // Auto-stop when done
+      Tone.Transport.schedule(() => {
+        stopPlayback();
+      }, maxDuration);
+    });
+
+    // Stop button
+    stopBtn.addEventListener('click', () => {
+      stopPlayback();
+    });
+
+    function stopPlayback() {
+      isPlaying = false;
+      
+      if (audioPlayer) {
+        audioPlayer.stop();
+      }
+      
+      // Fade out bowl
+      bowlGain.gain.cancelScheduledValues(Tone.now());
+      bowlGain.gain.linearRampToValueAtTime(0, Tone.now() + 0.2);
+      
+      Tone.Transport.stop();
+      Tone.Transport.cancel();
+      
+      if (progressInterval) {
+        clearInterval(progressInterval);
+        progressInterval = null;
+      }
+      
+      progressBar.style.width = '0%';
+      progressText.textContent = '0.0s / 0.0s';
+      playBtn.disabled = false;
+      stopBtn.disabled = true;
+      statusDiv.textContent = 'Stopped';
+      noteIndicator.style.display = 'none';
+    }
+
+    function showNoteIndicator(instClass, icon) {
+      noteIndicator.className = `note-indicator ${instClass}`;
+      noteIndicator.textContent = icon;
+      noteIndicator.style.display = 'block';
+      
+      if (instClass === 'inst3') {
+        // Keep showing for bowl (continuous)
+        setTimeout(() => {
+          if (isPlaying) return;  // Don't hide if still playing
+          noteIndicator.style.display = 'none';
+        }, 500);
+      } else {
+        setTimeout(() => {
+          noteIndicator.style.display = 'none';
+        }, 150);
+      }
+    }
+  </script>
+</body>
+</html>
